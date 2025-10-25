@@ -1,7 +1,8 @@
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { CheckCircle, Download, Film, Palette, ShoppingCart, Zap, Flame, Lock, ArrowRight, BrainCircuit, Users, Video } from 'lucide-react';
+import { CheckCircle, Flame, Lock, ShoppingCart, Zap } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
@@ -12,7 +13,6 @@ const getPlaceholderImage = (id: string) => {
   return PlaceHolderImages.find((img) => img.id === id);
 };
 
-const productMockup = getPlaceholderImage('reels-bundle-devices');
 const testimonial1Avatar = getPlaceholderImage('testimonial-1-avatar');
 const testimonial2Avatar = getPlaceholderImage('testimonial-2-avatar');
 const testimonial3Avatar = getPlaceholderImage('testimonial-3-avatar');
@@ -79,9 +79,15 @@ export default function HomePage() {
     }
   ];
 
-  const GradientCard = ({ children, className }: { children: React.ReactNode, className?: string }) => (
+  const GradientCard = ({ children, className, color = 'accent' }: { children: React.ReactNode, className?: string, color?: 'accent' | 'blue' }) => (
     <div className={cn("relative p-px rounded-lg", className)}>
-      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-accent to-blue-500 opacity-20" />
+      <div className={cn(
+        "absolute inset-0 rounded-lg opacity-20",
+        {
+          'bg-gradient-to-r from-accent to-blue-500': color === 'accent',
+          'bg-gradient-to-r from-blue-500 to-sky-400': color === 'blue'
+        }
+      )} />
       <div className="relative bg-card/80 backdrop-blur-sm rounded-[7px] h-full w-full">
         {children}
       </div>
@@ -233,7 +239,7 @@ export default function HomePage() {
         <section className="z-10 mt-32 w-full max-w-5xl">
             <h2 className="text-center text-4xl font-bold tracking-tighter">Talvez Você Esteja Pensando...</h2>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <GradientCard>
+                <GradientCard color="blue">
                     <CardHeader>
                         <CardTitle>"Não tenho dinheiro para investir agora."</CardTitle>
                     </CardHeader>
@@ -241,7 +247,7 @@ export default function HomePage() {
                         <p className="text-gray-300 leading-relaxed">Por isso criei a oferta de R$19,97. É menos que um lanche. O objetivo é que você recupere esse investimento em menos de 24 horas após aplicar o pilar 3.</p>
                     </CardContent>
                 </GradientCard>
-                <GradientCard>
+                <GradientCard color="accent">
                     <CardHeader>
                         <CardTitle>"Não tenho tempo para criar conteúdo."</CardTitle>
                     </CardHeader>
@@ -339,3 +345,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+    
