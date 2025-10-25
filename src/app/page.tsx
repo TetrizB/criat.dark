@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { CheckCircle, Download, Film, Palette, ShoppingCart, Zap, Flame, Lock } from 'lucide-react';
+import { CheckCircle, Download, Film, Palette, ShoppingCart, Zap, Flame, Lock, ArrowRight, BrainCircuit, Users, Video } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
@@ -12,7 +12,6 @@ const getPlaceholderImage = (id: string) => {
 };
 
 const productMockup = getPlaceholderImage('reels-bundle-devices');
-const founderPortrait = getPlaceholderImage('founder-portrait');
 const testimonial1Avatar = getPlaceholderImage('testimonial-1-avatar');
 const testimonial2Avatar = getPlaceholderImage('testimonial-2-avatar');
 const testimonial3Avatar = getPlaceholderImage('testimonial-3-avatar');
@@ -103,32 +102,60 @@ export default function HomePage() {
       </header>
       
       <main className="container mx-auto flex flex-col items-center px-4 pt-40 sm:pt-48">
-        {/* Hero Section */}
+        {/* 1. ATENÇÃO (A) - Captura Imediata */}
         <section className="z-10 text-center w-full max-w-4xl">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
             Ganhe de <span className="text-accent">R$5mil a R$100mil</span> no Instagram Sem Mostrar o Rosto
           </h1>
-          <p className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
-            A descoberta que ninguém te conta: 73% dos perfis de sucesso não mostram o rosto e contas "Dark" têm <span className="font-bold">340% mais engajamento</span>. Liberte-se do seu emprego e conquiste a liberdade financeira no anonimato.
+          <p className="mt-6 text-lg text-gray-300 max-w-3xl mx-auto">
+            (E a descoberta perturbadora que mudou tudo sobre monetização no digital)
           </p>
-          <div className="mt-8">
-            {productMockup && (
-              <Image
-                src={productMockup.imageUrl}
-                alt={productMockup.description}
-                width={800}
-                height={500}
-                className="rounded-lg shadow-2xl shadow-accent/20 mx-auto"
-                data-ai-hint={productMockup.imageHint}
-                priority
-              />
-            )}
+          <div className="mt-8 flex justify-center gap-4">
+            <Image src="https://picsum.photos/seed/sale1/300/150" alt="Prova de resultado 1" width={300} height={150} className="rounded-lg shadow-lg" data-ai-hint="financial chart" />
+            <Image src="https://picsum.photos/seed/sale2/300/150" alt="Prova de resultado 2" width={300} height={150} className="rounded-lg shadow-lg hidden sm:block" data-ai-hint="revenue growth" />
           </div>
         </section>
 
-        {/* Pricing Section */}
-        <section className="z-10 mt-24 w-full max-w-5xl">
-           <h2 className="text-center text-3xl font-bold mb-12">Escolha o seu acesso e comece hoje</h2>
+        {/* 2. INTERESSE (I) - Construção da Narrativa e Autoridade */}
+        <section className="z-10 mt-24 w-full max-w-4xl text-center">
+            <h2 className="text-3xl font-bold mb-4">Você Sabia?</h2>
+            <p className="text-lg text-gray-300 mb-8">A maioria das pessoas falha em monetizar no Instagram porque acredita que precisa de milhões de seguidores ou de uma vida de luxo para exibir. A verdade é que o <span className="text-accent font-bold">engajamento qualificado</span> vale mais do que a popularidade.</p>
+            
+            <Card className="bg-card/80 backdrop-blur-sm border-accent p-6">
+                <h3 className="text-2xl font-bold">A Descoberta que Ninguém te Conta</h3>
+                <p className="text-gray-300 mt-4">Durante 1 ano, analisei milhares de perfis e descobri um padrão chocante: <span className="font-bold text-white">73% dos perfis de sucesso não mostram o rosto</span>. Eles usam o que chamo de "conteúdo Dark" e, por isso, têm <span className="font-bold text-accent">340% mais engajamento</span>, pois o foco está 100% no conteúdo, não na pessoa.</p>
+            </Card>
+        </section>
+        
+        {/* "Arquitetura da Invisibilidade" - Mantendo o componente de scroll */}
+        <section className="z-10 mt-12 w-full flex flex-col overflow-hidden">
+          <ContainerScroll
+            titleComponent={
+              <>
+                <h1 className="text-4xl font-semibold text-white">
+                  A Arquitetura da Invisibilidade <br />
+                  <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                    Os 4 Pilares do Método
+                  </span>
+                </h1>
+              </>
+            }
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 bg-background/80 rounded-2xl">
+              {modules.map((module, index) => (
+                <div key={index}>
+                  <h3 className="text-xl font-bold text-accent mb-2">{module.title}</h3>
+                  <p className="text-gray-300">{module.description}</p>
+                </div>
+              ))}
+            </div>
+          </ContainerScroll>
+        </section>
+        
+        {/* 3. DESEJO (D) - Detalhamento da Oferta e Eliminação de Objeções */}
+        <section className="z-10 -mt-24 md:-mt-48 w-full max-w-5xl">
+           <h2 className="text-center text-3xl font-bold mb-4">O que está incluído?</h2>
+            <p className="text-center text-gray-400 mb-12">Tudo que você precisa para sair do zero e faturar alto, no anonimato.</p>
            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Offer 1: Super Pack */}
               <Card className="bg-card/80 backdrop-blur-sm border-border">
@@ -183,39 +210,38 @@ export default function HomePage() {
                 </CardContent>
               </Card>
            </div>
-           <div className="text-center mt-8 flex justify-center items-center gap-2 text-gray-300">
-             <Lock className="h-4 w-4"/>
-             <span>Pagamento seguro e garantia incondicional de 7 dias.</span>
+           <div className="text-center mt-8 text-gray-300">
+             <div className="bg-green-900/50 border border-green-400 rounded-lg p-4 max-w-2xl mx-auto">
+                <h4 className="font-bold text-lg text-white">Garantia Incondicional de 7 Dias</h4>
+                <p className="mt-2">Assumo todo o risco para você. Teste o método por 7 dias completos. Se não for para você, devolvemos 100% do seu dinheiro. Sem perguntas, sem estresse.</p>
+             </div>
            </div>
         </section>
-
-        {/* Modules Section */}
-        <section className="z-10 mt-24 w-full flex flex-col overflow-hidden">
-          <ContainerScroll
-            titleComponent={
-              <>
-                <h1 className="text-4xl font-semibold text-white">
-                  A Arquitetura da Invisibilidade <br />
-                  <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                    Os 4 Pilares do Método
-                  </span>
-                </h1>
-              </>
-            }
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 bg-background/80 rounded-2xl">
-              {modules.map((module, index) => (
-                <div key={index}>
-                  <h3 className="text-xl font-bold text-accent mb-2">{module.title}</h3>
-                  <p className="text-gray-300">{module.description}</p>
-                </div>
-              ))}
+        
+        {/* "Talvez Você Esteja Pensando" */}
+        <section className="z-10 mt-24 w-full max-w-4xl">
+            <h2 className="text-center text-3xl font-bold">Talvez Você Esteja Pensando...</h2>
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <Card className="bg-card/70">
+                    <CardHeader>
+                        <CardTitle>"Não tenho dinheiro para investir agora."</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p>Por isso criei a oferta de R$19,97. É menos que um lanche. O objetivo é que você recupere esse investimento em menos de 24 horas após aplicar o pilar 3.</p>
+                    </CardContent>
+                </Card>
+                <Card className="bg-card/70">
+                    <CardHeader>
+                        <CardTitle>"Não tenho tempo para criar conteúdo."</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p>O Pilar 2, "Sistema de Reciclagem Inteligente", foi feito para você. Com nosso pack de +60 mil vídeos, você não cria nada do zero, apenas adapta e posta em minutos.</p>
+                    </CardContent>
+                </Card>
             </div>
-          </ContainerScroll>
         </section>
 
-
-        {/* Social Proof Section */}
+        {/* Prova Social - Depoimentos */}
         <section className="z-10 mt-24 w-full max-w-6xl">
             <h2 className="text-center text-3xl font-bold">Resultados de Alunos que Aplicaram o Método</h2>
             <p className="text-center text-gray-400 mt-2">Eles também começaram do zero, como você.</p>
@@ -250,6 +276,24 @@ export default function HomePage() {
             </div>
         </section>
 
+        {/* 4. AÇÃO (A) - Chamada Final e Urgência */}
+        <section className="z-10 mt-24 text-center w-full max-w-4xl">
+            <h2 className="text-3xl font-bold">Uma Última Reflexão</h2>
+            <div className="mt-6 text-lg text-gray-300 space-y-4">
+                <p>Imagine acordar amanhã sabendo que seu celular está gerando vendas para você enquanto você dorme, viaja ou curte sua família. Sem reuniões, sem chefe, sem a obrigação de postar sua vida.</p>
+                <p>Essa é a realidade que o Digital Dark oferece. A decisão é sua: continuar sentindo que "mais uma semana foi perdida" ou tomar a atitude que pode te transformar no exemplo de superação da sua família.</p>
+            </div>
+            <div className="mt-10">
+                <Button size="lg" className="w-full md:w-auto bg-green-500 hover:bg-green-600 text-xl font-bold h-14 px-10">
+                  <CheckCircle className="mr-3" />
+                  Sim, Eu Quero Começar Agora!
+                </Button>
+                 <div className="text-center mt-4 flex justify-center items-center gap-2 text-gray-400">
+                    <Lock className="h-4 w-4"/>
+                    <span>Pagamento seguro, acesso imediato e 7 dias de garantia.</span>
+                </div>
+            </div>
+        </section>
 
         {/* FAQ Section */}
         <section className="z-10 my-24 w-full max-w-4xl">
