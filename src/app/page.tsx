@@ -5,6 +5,7 @@ import { CheckCircle, Download, Film, Palette, ShoppingCart, Zap, Flame } from '
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
+import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 
 const getPlaceholderImage = (id: string) => {
   return PlaceHolderImages.find((img) => img.id === id);
@@ -57,10 +58,6 @@ export default function HomePage() {
     }
   ];
   
-  const allInOneFeatures = [
-    'Static Ad', 'Story & Reels', 'Editable in Canva', 'Plug & Play', '100% Customizable', 'Instant Delivery'
-  ];
-
   return (
     <div className="relative min-h-screen w-full text-white">
       {/* Header */}
@@ -87,19 +84,6 @@ export default function HomePage() {
       <main className="container mx-auto flex flex-col items-center px-4 pt-40 sm:pt-48">
         {/* Product Section */}
         <div className="z-10 grid w-full max-w-6xl grid-cols-1 gap-12 lg:grid-cols-2">
-          <div className="flex items-center justify-center">
-            {productMockup && (
-              <Image
-                src={productMockup.imageUrl}
-                alt={productMockup.description}
-                width={600}
-                height={400}
-                className="rounded-lg shadow-2xl shadow-accent/20"
-                data-ai-hint={productMockup.imageHint}
-                priority
-              />
-            )}
-          </div>
           <div className="flex flex-col justify-center">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
               18.000+ Luxury Aesthetic Reels Bundle
@@ -132,6 +116,19 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+           <div className="flex items-center justify-center">
+            {productMockup && (
+              <Image
+                src={productMockup.imageUrl}
+                alt={productMockup.description}
+                width={600}
+                height={400}
+                className="rounded-lg shadow-2xl shadow-accent/20"
+                data-ai-hint={productMockup.imageHint}
+                priority
+              />
+            )}
+          </div>
         </div>
 
         {/* Authority and Results Section */}
@@ -148,18 +145,33 @@ export default function HomePage() {
         </section>
 
         {/* All-in-One System Section */}
-        <section className="z-10 mt-24 w-full max-w-4xl text-center">
-          <h2 className="text-3xl font-bold">An All-in-One System, Not Just Templates</h2>
-          <p className="mt-4 text-gray-300 max-w-2xl mx-auto">This is a complete creative toolkit designed to elevate your content strategy. We provide everything you need to produce stunning visuals that capture attention and drive engagement.</p>
-          <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-6">
-            {allInOneFeatures.map((feature, index) => (
-              <Card key={index} className="bg-card/80 backdrop-blur-sm p-4 flex items-center gap-3">
-                 <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
-                 <span className="font-semibold">{feature}</span>
-              </Card>
-            ))}
-          </div>
+        <section className="z-10 w-full flex flex-col overflow-hidden">
+          <ContainerScroll
+            titleComponent={
+              <>
+                <h1 className="text-4xl font-semibold text-white">
+                  An All-in-One System, <br />
+                  <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                    Not Just Templates
+                  </span>
+                </h1>
+              </>
+            }
+          >
+            {productMockup && (
+              <Image
+                src={productMockup.imageUrl}
+                alt={productMockup.description}
+                height={720}
+                width={1400}
+                className="mx-auto rounded-2xl object-cover h-full object-left-top"
+                draggable={false}
+                data-ai-hint={productMockup.imageHint}
+              />
+            )}
+          </ContainerScroll>
         </section>
+
 
         {/* Founder Authority Section */}
         <section className="z-10 mt-24 w-full max-w-4xl">
