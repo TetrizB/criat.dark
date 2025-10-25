@@ -33,6 +33,12 @@ const nextConfig: NextConfig = {
         hostname: 'ui.aceternity.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.postimg.cc',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

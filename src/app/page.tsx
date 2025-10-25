@@ -1,5 +1,6 @@
 
 
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -9,6 +10,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
 import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 import { cn } from '@/lib/utils';
+import { Bell } from 'lucide-react';
 
 const getPlaceholderImage = (id: string) => {
   return PlaceHolderImages.find((img) => img.id === id);
@@ -158,16 +160,25 @@ export default function HomePage() {
       <main className="container mx-auto flex flex-col items-center px-4 pt-48 sm:pt-56">
         {/* 1. ATENÇÃO (A) - Captura Imediata */}
         <section className="z-10 text-center w-full max-w-5xl">
-          <h1 className="text-5xl font-extrabold tracking-tighter text-white sm:text-7xl">
-            Ganhe de <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">R$5mil a R$100mil</span> no Instagram Sem Mostrar o Rosto
-          </h1>
-          <p className="mt-6 text-lg text-gray-400 max-w-3xl mx-auto">
-            (E a descoberta perturbadora que mudou tudo sobre monetização no digital)
-          </p>
-          <div className="mt-10 flex justify-center gap-4 sm:gap-6">
-            <Image src="https://picsum.photos/seed/sale1/400/200" alt="Prova de resultado 1" width={400} height={200} className="rounded-xl shadow-2xl border-2 border-border/50 transition-transform duration-300 hover:scale-105" data-ai-hint="financial chart" />
-            <Image src="https://picsum.photos/seed/sale2/400/200" alt="Prova de resultado 2" width={400} height={200} className="rounded-xl shadow-2xl border-2 border-border/50 transition-transform duration-300 hover:scale-105 hidden sm:block" data-ai-hint="revenue growth" />
-          </div>
+            <div className="relative inline-block">
+                <Image 
+                    src="https://i.postimg.cc/g0qR2j3B/Copia-de-Copia-de-Copia-de-Post-Qroz-4-8-25-1759537252059-Bz-S2s-Ni-W.png"
+                    alt="Resultado de vendas"
+                    width={600}
+                    height={600}
+                    className="rounded-xl shadow-2xl border-2 border-border/50"
+                    data-ai-hint="sales result"
+                />
+                <div className="animate-float-and-fade absolute -right-16 top-1/4 flex items-center gap-3 rounded-xl border border-border bg-card/80 p-3 shadow-lg backdrop-blur-sm">
+                    <div className="rounded-full bg-green-500/20 p-2">
+                        <Bell className="h-5 w-5 text-green-400" />
+                    </div>
+                    <div>
+                        <p className="text-sm font-bold text-white">+R$97,00 em vendas</p>
+                        <p className="text-xs text-gray-400">agora mesmo</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         {/* 2. INTERESSE (I) - Construção da Narrativa e Autoridade */}
@@ -414,3 +425,4 @@ export default function HomePage() {
     
 
     
+

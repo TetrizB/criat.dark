@@ -88,10 +88,18 @@ export default {
             height: '0',
           },
         },
+        'float-and-fade': {
+          '0%': { transform: 'translateY(0) translateX(0)', opacity: '0' },
+          '25%': { opacity: '1' },
+          '50%': { transform: 'translateY(-20px) translateX(10px)', opacity: '1' },
+          '75%': { opacity: '1' },
+          '100%': { transform: 'translateY(-40px) translateX(20px)', opacity: '0' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'float-and-fade': 'float-and-fade 4s ease-in-out infinite',
       },
     },
   },
