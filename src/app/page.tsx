@@ -1,8 +1,9 @@
 
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { CheckCircle, Flame, Lock, ShoppingCart, Zap, CircleCheckBig } from 'lucide-react';
+import { CheckCircle, Flame, Lock, ShoppingCart, Zap, CircleCheckBig, Video, BrainCircuit, MessageSquare, Scissors, HelpCircle, Rocket } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
@@ -28,6 +29,7 @@ export default function HomePage() {
     '4 Aulas Bônus',
     'Suporte Personalizado',
     '+30.000 Vídeos Virais Editáveis',
+    'Curso Rápido "Meu Primeiro Viral"',
   ];
 
   const featuresCompleto = [
@@ -58,7 +60,40 @@ export default function HomePage() {
       description: "Receba acesso a fórmulas, roteiros e templates prontos para garantir que seu conteúdo alcance milhões de pessoas.",
       color: "text-red-400"
     }
-  ]
+  ];
+
+  const bonuses = [
+    {
+      icon: Video,
+      title: "Banco de Vídeos Virais",
+      description: "Acesso a +60.000 vídeos prontos para editar, garantindo que você nunca fique sem conteúdo.",
+    },
+    {
+      icon: BrainCircuit,
+      title: "Arsenal de Comandos para IA",
+      description: "Use a inteligência artificial para fazer o trabalho pesado de roteirização e pesquisa de ideias.",
+    },
+    {
+      icon: MessageSquare,
+      title: "Comunidade Privada",
+      description: "Networking e suporte contínuo em nosso grupo exclusivo no WhatsApp. Você não estará sozinho.",
+    },
+    {
+      icon: Scissors,
+      title: "Aulas de Edição no CapCut",
+      description: "4 aulas bônus para você dominar a edição de vídeos de forma profissional, mesmo começando do zero.",
+    },
+    {
+      icon: HelpCircle,
+      title: "Suporte Direto no WhatsApp",
+      description: "Canal de comunicação direto com nossa equipe para tirar todas as suas dúvidas rapidamente.",
+    },
+    {
+      icon: Rocket,
+      title: "Curso 'Meu Primeiro Viral'",
+      description: "Um curso relâmpago focado em resultados imediatos para você ter sua primeira vitória e se manter motivado.",
+    }
+  ];
 
   const faqs = [
     {
@@ -233,10 +268,33 @@ export default function HomePage() {
                 </CardContent>
               </GradientCard>
            </div>
-           <div className="text-center mt-16 text-gray-300">
-             <div className="bg-green-900/30 border border-green-400/50 rounded-xl p-6 max-w-3xl mx-auto backdrop-blur-sm">
-                <h4 className="font-bold text-xl text-white">Garantia Incondicional de 7 Dias</h4>
-                <p className="mt-3 leading-relaxed">Assumo todo o risco para você. Teste o método por 7 dias completos. Se não for para você, devolvemos 100% do seu dinheiro. Sem perguntas, sem estresse.</p>
+        </section>
+
+        {/* Bonus Section */}
+        <section className="z-10 mt-32 w-full max-w-6xl">
+            <h2 className="text-center text-4xl font-bold tracking-tighter">Desbloqueie um Arsenal de <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">Bônus Exclusivos</span></h2>
+            <p className="text-center text-gray-400 mt-4 text-lg max-w-3xl mx-auto">Comprando hoje, você leva todos esses presentes para acelerar seus resultados:</p>
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {bonuses.map((bonus, index) => (
+                    <GradientCard key={index}>
+                        <CardContent className="p-6 text-center flex flex-col items-center h-full">
+                          <div className="p-4 bg-primary rounded-full inline-block mb-4">
+                            <bonus.icon className="h-8 w-8 text-accent" />
+                          </div>
+                          <h3 className="font-bold text-xl text-white mb-2">{bonus.title}</h3>
+                          <p className="text-gray-400 text-sm leading-relaxed flex-grow">{bonus.description}</p>
+                        </CardContent>
+                    </GradientCard>
+                ))}
+            </div>
+        </section>
+
+        {/* Garantia */}
+        <section className="z-10 mt-32 w-full">
+           <div className="text-center text-gray-300">
+             <div className="bg-green-900/30 border border-green-400/50 rounded-xl p-8 max-w-3xl mx-auto backdrop-blur-sm">
+                <h4 className="font-bold text-2xl text-white">Garantia Incondicional de 7 Dias</h4>
+                <p className="mt-4 text-lg leading-relaxed">Assumo todo o risco para você. Teste o método por 7 dias completos. Se não for para você, devolvemos 100% do seu dinheiro. Sem perguntas, sem estresse.</p>
              </div>
            </div>
         </section>
@@ -353,4 +411,6 @@ export default function HomePage() {
 }
 
     
+    
+
     
