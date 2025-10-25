@@ -29,7 +29,6 @@ export default function HomePage() {
     '4 Aulas Bônus',
     'Suporte Personalizado',
     '+30.000 Vídeos Virais Editáveis',
-    'Curso Rápido "Meu Primeiro Viral"',
   ];
 
   const featuresCompleto = [
@@ -37,6 +36,7 @@ export default function HomePage() {
     'Pack com +60.000 Vídeos Virais',
     '17 Nichos Altamente Lucrativos',
     'Acesso a Todas as Atualizações',
+    'Curso Rápido "Meu Primeiro Viral"',
   ];
 
   const modules = [
