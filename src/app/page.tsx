@@ -170,7 +170,7 @@ export default function HomePage() {
                     alt="Resultado de vendas"
                     width={600}
                     height={600}
-                    className="rounded-xl shadow-2xl border-2 border-border/50"
+                    className="rounded-xl shadow-2xl"
                     data-ai-hint="sales result"
                 />
                 <div className="animate-float-and-fade absolute -right-16 top-1/4 flex items-center gap-3 rounded-xl border border-border bg-card/80 p-3 shadow-lg backdrop-blur-sm">
