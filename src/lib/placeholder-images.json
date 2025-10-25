@@ -19,16 +19,16 @@
       "imageHint": "person avatar"
     },
     {
-      "id": "testimonial-2-avatar",
-      "description": "Avatar for the second testimonial.",
-      "imageUrl": "https://images.unsplash.com/photo-1630910561339-4e22c7150093?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwZXJzb24lMjBhdmF0YXJ8ZW58MHx8fHwxNzYxMjcwMDg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "person avatar"
+      "id": "dior-logo",
+      "description": "DIOR logo.",
+      "imageUrl": "https://images.unsplash.com/photo-1759563874692-d556321d7c3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxESU9SJTIwbG9nb3xlbnwwfHx8fDE3NjEzNzI4MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "DIOR logo"
     },
     {
-      "id": "testimonial-3-avatar",
-      "description": "Avatar for the third testimonial.",
-      "imageUrl": "https://images.unsplash.com/photo-1599566147214-ce487862ea4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwZXJzb24lMjBhdmF0YXJ8ZW58MHx8fHwxNzYxMjcwMDg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "person avatar"
+      "id": "tomboy-logo",
+      "description": "TOMBOY logo.",
+      "imageUrl": "https://images.unsplash.com/photo-1575400771291-acfafff3e48e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8VE9NQk9ZJTIwbG9nb3xlbnwwfHx8fDE3NjEzNzI4MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "TOMBOY logo"
     }
   ]
 }
