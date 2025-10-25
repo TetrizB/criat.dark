@@ -153,7 +153,7 @@ export default function HomePage() {
         </section>
         
         {/* 3. DESEJO (D) - Detalhamento da Oferta e Eliminação de Objeções */}
-        <section className="z-10 -mt-24 md:-mt-48 w-full max-w-5xl">
+        <section className="z-10 mt-24 w-full max-w-5xl">
            <h2 className="text-center text-3xl font-bold mb-4">O que está incluído?</h2>
             <p className="text-center text-gray-400 mb-12">Tudo que você precisa para sair do zero e faturar alto, no anonimato.</p>
            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
