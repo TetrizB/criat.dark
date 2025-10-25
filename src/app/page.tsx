@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { CheckCircle, Flame, Lock, ShoppingCart, Zap } from 'lucide-react';
+import { CheckCircle, Flame, Lock, ShoppingCart, Zap, CircleCheckBig } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
@@ -162,12 +162,14 @@ export default function HomePage() {
               </>
             }
           >
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 bg-background/80 rounded-2xl h-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4 bg-transparent h-full">
               {modules.map((module, index) => (
-                <div key={index} className="flex flex-col justify-center">
-                  <h3 className={cn("text-xl font-bold mb-2", module.color)}>{module.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{module.description}</p>
-                </div>
+                <GradientCard key={index} className="flex flex-col justify-center">
+                  <div className="p-6">
+                    <h3 className={cn("text-xl font-bold mb-2", module.color)}>{module.title}</h3>
+                    <p className="text-gray-300 leading-relaxed">{module.description}</p>
+                  </div>
+                </GradientCard>
               ))}
             </div>
           </ContainerScroll>
@@ -306,7 +308,7 @@ export default function HomePage() {
             </div>
             <div className="mt-12">
                 <Button size="lg" className="w-full md:w-auto bg-green-500 hover:bg-green-600 text-xl font-bold h-16 px-12 shadow-lg shadow-green-500/30 transition-transform duration-300 hover:scale-105">
-                  <CheckCircle className="mr-3" />
+                  <CircleCheckBig className="mr-3" />
                   Sim, Eu Quero Começar Agora!
                 </Button>
                  <div className="text-center mt-6 flex justify-center items-center gap-2 text-gray-400 text-sm">
