@@ -106,7 +106,7 @@ export default function HomePage() {
             <Flame className="mr-2 h-4 w-4 animate-pulse" /> OFERTA POR TEMPO LIMITADO
         </div>
         <nav className="container mx-auto flex items-center justify-between p-4">
-            <div className="text-2xl font-bold tracking-tighter">DigitalDark</div>
+            <div className="text-2xl font-bold tracking-tighter">Criat.Dark</div>
             <div className="hidden md:flex items-center space-x-8">
                 {navLinks.map(link => (
                     <Link key={link} href="#" className="text-sm font-medium text-gray-300 hover:text-accent transition-colors duration-300">
@@ -336,7 +336,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="z-10 w-full border-t border-border/30 bg-background/80 backdrop-blur-md mt-20">
         <div className="container mx-auto p-8 text-center">
-            <h3 className="font-bold text-xl tracking-tighter">DigitalDark</h3>
+            <h3 className="font-bold text-xl tracking-tighter">Criat.Dark</h3>
             <p className="text-sm text-gray-400 mt-2">Sua liberdade financeira no anonimato.</p>
              <div className="mt-6 space-x-6 text-sm text-gray-300">
                 <Link href="#" className="hover:text-accent transition-colors">Termos de Serviço</Link>
@@ -345,11 +345,12 @@ export default function HomePage() {
             </div>
         </div>
         <div className="border-t border-border/30 py-4 text-center text-xs text-gray-500">
-          © {new Date().getFullYear()} Digital Dark. Todos os direitos reservados. Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook.
+          © {new Date().getFullYear()} Criat.Dark. Todos os direitos reservados. Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook.
         </div>
       </footer>
     </div>
   );
 }
 
+    
     
