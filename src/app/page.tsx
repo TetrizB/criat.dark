@@ -158,11 +158,11 @@ export default function HomePage() {
             <p className="text-center text-gray-400 mb-12">Tudo que você precisa para sair do zero e faturar alto, no anonimato.</p>
            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Offer 1: Super Pack */}
-              <Card className="bg-card/80 backdrop-blur-sm border-border">
+              <Card className="bg-card/80 backdrop-blur-sm border-border flex flex-col">
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold">SUPER PACK VIRAL</CardTitle>
                 </CardHeader>
-                <CardContent className="flex flex-col h-full">
+                <CardContent className="flex flex-col flex-grow">
                   <div className="flex-grow">
                     <p className="text-4xl font-bold mb-4">R$19<span className="text-2xl">,97</span></p>
                     <p className="text-sm text-gray-400 mb-6">ou 4x de R$5,53</p>
@@ -183,14 +183,14 @@ export default function HomePage() {
               </Card>
 
               {/* Offer 2: Acesso Completo */}
-              <Card className="bg-card/80 backdrop-blur-sm border-2 border-accent relative">
+              <Card className="bg-card/80 backdrop-blur-sm border-2 border-accent relative flex flex-col">
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white px-4 py-1 rounded-full text-sm font-bold">
                   MAIS VENDIDO
                 </div>
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold">ACESSO COMPLETO</CardTitle>
                 </CardHeader>
-                <CardContent className="flex flex-col h-full">
+                <CardContent className="flex flex-col flex-grow">
                   <div className="flex-grow">
                     <p className="text-4xl font-bold mb-4">R$37<span className="text-2xl">,00</span></p>
                     <p className="text-sm text-gray-400 mb-6">ou 8x de R$5,38</p>
