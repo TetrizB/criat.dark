@@ -40,19 +40,23 @@ export default function HomePage() {
   const modules = [
     {
       title: "Pilar 1: Seleção Estratégica de Nicho",
-      description: "Aprenda a identificar mercados sub-explorados e lucrativos onde a concorrência é baixa e o potencial de ganho é alto."
+      description: "Aprenda a identificar mercados sub-explorados e lucrativos onde a concorrência é baixa e o potencial de ganho é alto.",
+      color: "text-blue-400"
     },
     {
       title: "Pilar 2: Sistema de Reciclagem Inteligente",
-      description: "Descubra como criar conteúdo viral de alta qualidade sem precisar gravar nada do zero, usando nosso sistema de reciclagem."
+      description: "Descubra como criar conteúdo viral de alta qualidade sem precisar gravar nada do zero, usando nosso sistema de reciclagem.",
+      color: "text-green-400"
     },
     {
       title: "Pilar 3: Monetização Silenciosa",
-      description: "O segredo para gerar receita. Conheça as 4 formas comprovadas de monetizar seu perfil sem nunca mostrar o rosto."
+      description: "O segredo para gerar receita. Conheça as 4 formas comprovadas de monetizar seu perfil sem nunca mostrar o rosto.",
+      color: "text-purple-400"
     },
     {
       title: "Pilar 4: Viralização Programada",
-      description: "Receba acesso a fórmulas, roteiros e templates prontos para garantir que seu conteúdo alcance milhões de pessoas."
+      description: "Receba acesso a fórmulas, roteiros e templates prontos para garantir que seu conteúdo alcance milhões de pessoas.",
+      color: "text-red-400"
     }
   ]
 
@@ -161,7 +165,7 @@ export default function HomePage() {
            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 bg-background/80 rounded-2xl h-full">
               {modules.map((module, index) => (
                 <div key={index} className="flex flex-col justify-center">
-                  <h3 className="text-xl font-bold text-accent mb-2">{module.title}</h3>
+                  <h3 className={cn("text-xl font-bold mb-2", module.color)}>{module.title}</h3>
                   <p className="text-gray-300 leading-relaxed">{module.description}</p>
                 </div>
               ))}
