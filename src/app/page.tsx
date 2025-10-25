@@ -1,6 +1,4 @@
 
-
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -160,7 +158,13 @@ export default function HomePage() {
       <main className="container mx-auto flex flex-col items-center px-4 pt-48 sm:pt-56">
         {/* 1. ATENÇÃO (A) - Captura Imediata */}
         <section className="z-10 text-center w-full max-w-5xl">
-            <div className="relative inline-block">
+            <h1 className="text-5xl font-extrabold tracking-tighter text-white sm:text-7xl">
+                Ganhe de <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">R$5mil a R$100mil</span> no Instagram Sem Mostrar o Rosto
+            </h1>
+            <p className="mt-6 text-lg text-gray-400 max-w-3xl mx-auto">
+                (E a descoberta perturbadora que mudou tudo sobre monetização no digital)
+            </p>
+            <div className="mt-10 relative inline-block">
                 <Image 
                     src="https://i.postimg.cc/g0qR2j3B/Copia-de-Copia-de-Copia-de-Post-Qroz-4-8-25-1759537252059-Bz-S2s-Ni-W.png"
                     alt="Resultado de vendas"
@@ -420,9 +424,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-    
-    
-
-    
-
