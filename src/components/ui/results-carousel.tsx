@@ -55,13 +55,13 @@ export function ResultsCarousel() {
           <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
             <div className="p-1">
               <Card className="overflow-hidden border-2 border-border/40">
-                <CardContent className="flex aspect-square items-center justify-center p-0">
+                <CardContent className="flex items-center justify-center p-0 bg-black">
                   <Image
                     src={result.src}
                     alt={result.alt}
                     width={500}
                     height={500}
-                    className="object-cover w-full h-full"
+                    className="object-contain w-full h-auto"
                     data-ai-hint={result.hint}
                   />
                 </CardContent>
