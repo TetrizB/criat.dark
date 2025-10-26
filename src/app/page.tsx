@@ -251,7 +251,7 @@ export default function HomePage() {
             <h2 className="text-4xl font-bold tracking-tighter">Reels de Viagens luxuosas</h2>
           </div>
           <VideoCarousel />
-          <p className="text-center text-gray-400 mt-4 text-lg">edite eles em seus videos ou utilize-os como estão (adapte)</p>
+          <p className="text-center text-gray-400 mt-4 text-lg">edite eles em seus videos ou utilize-os como estão</p>
           <div className="mt-8 text-center">
             <Button asChild size="lg" className="bg-accent hover:bg-accent/80 text-lg font-bold h-14 transition-transform duration-200 hover:scale-105">
                 <Link href="#ofertas">
