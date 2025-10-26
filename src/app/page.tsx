@@ -1,8 +1,10 @@
 
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { CheckCircle, Flame, Lock, ShoppingCart, Zap, CircleCheckBig, Video, BrainCircuit, MessageSquare, Scissors, HelpCircle, Rocket } from 'lucide-react';
+import { CheckCircle, Flame, Lock, ShoppingCart, Zap, CircleCheckBig, Video, BrainCircuit, MessageSquare, Scissors, HelpCircle, Rocket, Menu } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
@@ -10,6 +12,12 @@ import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 import { cn } from '@/lib/utils';
 import { Bell } from 'lucide-react';
 import { modules } from '@/lib/content';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import React from 'react';
 
 const getPlaceholderImage = (id: string) => {
   return PlaceHolderImages.find((img) => img.id === id);
@@ -21,7 +29,12 @@ const testimonial3Avatar = getPlaceholderImage('testimonial-3-avatar');
 
 
 export default function HomePage() {
-  const navLinks = ['Início', 'O Método', 'Depoimentos', 'FAQ'];
+  const navLinks = [
+    { name: 'Início', href: '#inicio' },
+    { name: 'O Método', href: '#metodo' },
+    { name: 'Depoimentos', href: '#depoimentos' },
+    { name: 'FAQ', href: '#faq' },
+  ];
 
   const featuresSuperPack = [
     '4 Módulos do Método',
@@ -122,20 +135,36 @@ export default function HomePage() {
             <div className="text-2xl font-bold tracking-tighter">Criat.Dark</div>
             <div className="hidden md:flex items-center space-x-8">
                 {navLinks.map(link => (
-                    <Link key={link} href="#" className="text-sm font-medium text-gray-300 hover:text-accent transition-colors duration-300">
-                        {link}
+                    <Link key={link.name} href={link.href} className="text-sm font-medium text-gray-300 hover:text-accent transition-colors duration-300">
+                        {link.name}
                     </Link>
                 ))}
             </div>
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Zap className="h-5 w-5"/>
-            </Button>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Menu className="h-5 w-5"/>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-lg">
+                  <div className="flex flex-col h-full p-4">
+                    <div className="text-2xl font-bold tracking-tighter mb-12">Criat.Dark</div>
+                    <div className="flex flex-col items-start space-y-6">
+                      {navLinks.map(link => (
+                          <Link key={link.name} href={link.href} className="text-lg font-medium text-gray-200 hover:text-accent transition-colors duration-300">
+                              {link.name}
+                          </Link>
+                      ))}
+                    </div>
+                  </div>
+              </SheetContent>
+            </Sheet>
         </nav>
       </header>
       
       <main className="container mx-auto flex flex-col items-center px-4 pt-48 sm:pt-56">
         {/* 1. ATENÇÃO (A) - Captura Imediata */}
-        <section className="z-10 text-center w-full max-w-5xl">
+        <section id="inicio" className="z-10 text-center w-full max-w-5xl">
             <h1 className="text-5xl font-extrabold tracking-tighter text-white sm:text-7xl">
                 Ganhe de <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">R$5mil a R$100mil</span> no Instagram Sem Mostrar o Rosto
             </h1>
@@ -177,7 +206,7 @@ export default function HomePage() {
         </section>
         
         {/* "Arquitetura da Invisibilidade" */}
-        <section className="z-10 mt-20 w-full flex flex-col overflow-hidden">
+        <section id="metodo" className="z-10 mt-20 w-full flex flex-col overflow-hidden">
           <ContainerScroll
             titleComponent={
               <>
@@ -316,7 +345,7 @@ export default function HomePage() {
         </section>
 
         {/* Prova Social - Depoimentos */}
-        <section className="z-10 mt-32 w-full max-w-7xl">
+        <section id="depoimentos" className="z-10 mt-32 w-full max-w-7xl">
             <h2 className="text-center text-4xl font-bold tracking-tighter">Resultados de Alunos que Aplicaram o Método</h2>
             <p className="text-center text-gray-400 mt-4 text-lg">Eles também começaram do zero, como você.</p>
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -370,7 +399,7 @@ export default function HomePage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="z-10 my-32 w-full max-w-4xl">
+        <section id="faq" className="z-10 my-32 w-full max-w-4xl">
           <h2 className="text-center text-4xl font-bold tracking-tighter">Perguntas Frequentes</h2>
           <Accordion type="single" collapsible className="mt-12 w-full space-y-4">
             {faqs.map((faq, index) => (
@@ -402,5 +431,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-    
