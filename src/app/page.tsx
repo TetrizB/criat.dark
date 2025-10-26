@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 import { cn } from '@/lib/utils';
 import { Bell } from 'lucide-react';
+import { modules } from '@/lib/content';
 
 const getPlaceholderImage = (id: string) => {
   return PlaceHolderImages.find((img) => img.id === id);
@@ -28,38 +29,15 @@ export default function HomePage() {
     'Comunidade Exclusiva',
     '4 Aulas Bônus',
     'Suporte Personalizado',
-    '+30.000 Vídeos Virais Editáveis',
   ];
 
   const featuresCompleto = [
     'TUDO do Super Pack Viral',
+    '+30.000 Vídeos Virais Editáveis',
     'Pack com +60.000 Vídeos Virais',
     '17 Nichos Altamente Lucrativos',
     'Acesso a Todas as Atualizações',
     'Curso Rápido "Meu Primeiro Viral"',
-  ];
-
-  const modules = [
-    {
-      title: "Pilar 1: Seleção Estratégica de Nicho",
-      description: "Aprenda a identificar mercados sub-explorados e lucrativos onde a concorrência é baixa e o potencial de ganho é alto.",
-      color: "text-blue-400"
-    },
-    {
-      title: "Pilar 2: Sistema de Reciclagem Inteligente",
-      description: "Descubra como criar conteúdo viral de alta qualidade sem precisar gravar nada do zero, usando nosso sistema de reciclagem.",
-      color: "text-green-400"
-    },
-    {
-      title: "Pilar 3: Monetização Silenciosa",
-      description: "O segredo para gerar receita. Conheça as 4 formas comprovadas de monetizar seu perfil sem nunca mostrar o rosto.",
-      color: "text-purple-400"
-    },
-    {
-      title: "Pilar 4: Viralização Programada",
-      description: "Receba acesso a fórmulas, roteiros e templates prontos para garantir que seu conteúdo alcance milhões de pessoas.",
-      color: "text-red-400"
-    }
   ];
 
   const bonuses = [
@@ -424,3 +402,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+    
