@@ -337,7 +337,9 @@ export default function HomePage() {
         
         {/* "Talvez Você Esteja Pensando" */}
         <section className="z-10 mt-32 w-full max-w-5xl">
-            <h2 className="text-center text-4xl font-bold tracking-tighter">Talvez Você Esteja Pensando...</h2>
+            <h2 className="text-center text-4xl font-bold tracking-tighter">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">Talvez Você Esteja Pensando...</span>
+            </h2>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
                 <GradientCard color="blue">
                     <CardHeader>
