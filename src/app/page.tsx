@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/sheet"
 import React from 'react';
 import { ResultsCarousel } from '@/components/ui/results-carousel';
+import { VideoCarousel } from '@/components/ui/video-carousel';
 
 const getPlaceholderImage = (id: string) => {
   return PlaceHolderImages.find((img) => img.id === id);
@@ -245,9 +246,25 @@ export default function HomePage() {
           <ResultsCarousel />
         </section>
 
+        <section className="z-10 mt-32 w-full max-w-7xl">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold tracking-tighter">Reels de Viagens luxuosas</h2>
+          </div>
+          <VideoCarousel />
+          <p className="text-center text-gray-400 mt-4 text-lg">edite eles em seus videos ou utilize-os como estão (adapte)</p>
+          <div className="mt-8 text-center">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/80 text-lg font-bold h-14 transition-transform duration-200 hover:scale-105">
+                <Link href="#ofertas">
+                    <ShoppingCart className="mr-3" />
+                    Quero ter acesso agora
+                </Link>
+            </Button>
+          </div>
+        </section>
+
 
         {/* 3. DESEJO (D) - Detalhamento da Oferta */}
-        <section className="z-10 mt-32 w-full max-w-6xl">
+        <section id="ofertas" className="z-10 mt-32 w-full max-w-6xl">
            <h2 className="text-center text-4xl font-bold tracking-tighter mb-4">O que você vai receber?</h2>
             <p className="text-center text-gray-400 mb-16 text-lg">Tudo que você precisa para sair do zero e faturar alto, no anonimato.</p>
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
