@@ -4,7 +4,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { CheckCircle, Flame, Lock, ShoppingCart, Zap, CircleCheckBig, Video, BrainCircuit, MessageSquare, Scissors, HelpCircle, Rocket, Menu } from 'lucide-react';
+import { CheckCircle, Flame, Lock, ShoppingCart, Zap, CircleCheckBig, Video, BrainCircuit, MessageSquare, Scissors, HelpCircle, Rocket, Menu, Star } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
@@ -18,6 +18,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import React from 'react';
+import { ResultsCarousel } from '@/components/ui/results-carousel';
 
 const getPlaceholderImage = (id: string) => {
   return PlaceHolderImages.find((img) => img.id === id);
@@ -232,8 +233,21 @@ export default function HomePage() {
           </ContainerScroll>
         </section>
         
+        <section className="z-10 mt-32 w-full max-w-7xl">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold tracking-tighter">O que Acontece Quando Você Entende Isso</h2>
+            <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Essas pessoas não eram especiais. Eram trabalhadoras comuns que entenderam como o sistema realmente funciona.</p>
+            <div className="flex justify-center items-center gap-1 mt-2 text-yellow-400">
+                <Star className="h-4 w-4 fill-current" />
+                <p className="font-semibold">Olhe os resultados de alguns nossos Alunos que aplicaram o Método</p>
+            </div>
+          </div>
+          <ResultsCarousel />
+        </section>
+
+
         {/* 3. DESEJO (D) - Detalhamento da Oferta */}
-        <section className="z-10 mt-12 w-full max-w-6xl">
+        <section className="z-10 mt-32 w-full max-w-6xl">
            <h2 className="text-center text-4xl font-bold tracking-tighter mb-4">O que você vai receber?</h2>
             <p className="text-center text-gray-400 mb-16 text-lg">Tudo que você precisa para sair do zero e faturar alto, no anonimato.</p>
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
