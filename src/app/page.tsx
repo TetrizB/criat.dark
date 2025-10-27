@@ -236,18 +236,6 @@ export default function HomePage() {
         
         <section className="z-10 mt-32 w-full max-w-7xl">
           <div className="text-center">
-            <h2 className="text-4xl font-bold tracking-tighter">O que Acontece Quando Você Entende Isso</h2>
-            <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Essas pessoas não eram especiais. Eram trabalhadoras comuns que entenderam como o sistema realmente funciona.</p>
-            <div className="flex justify-center items-center gap-1 mt-2 text-yellow-400">
-                <Star className="h-4 w-4 fill-current" />
-                <p className="font-semibold">Olhe os resultados de alguns nossos Alunos que aplicaram o Método</p>
-            </div>
-          </div>
-          <ResultsCarousel />
-        </section>
-
-        <section className="z-10 mt-32 w-full max-w-7xl">
-          <div className="text-center">
             <h2 className="text-4xl font-bold tracking-tighter">Reels de Viagens luxuosas</h2>
           </div>
           <VideoCarousel />
@@ -260,6 +248,18 @@ export default function HomePage() {
                 </Link>
             </Button>
           </div>
+        </section>
+
+        <section className="z-10 mt-32 w-full max-w-7xl">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold tracking-tighter">O que Acontece Quando Você Entende Isso</h2>
+            <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Essas pessoas não eram especiais. Eram trabalhadoras comuns que entenderam como o sistema realmente funciona.</p>
+            <div className="flex justify-center items-center gap-1 mt-2 text-yellow-400">
+                <Star className="h-4 w-4 fill-current" />
+                <p className="font-semibold">Olhe os resultados de alguns nossos Alunos que aplicaram o Método</p>
+            </div>
+          </div>
+          <ResultsCarousel />
         </section>
 
 
