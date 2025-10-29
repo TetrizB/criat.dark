@@ -325,7 +325,7 @@ export default function HomePage() {
                       ))}
                     </ul>
                   </div>
-                  <Button size="lg" className="w-full bg-accent hover:bg-accent/80 text-lg font-bold h-14 mt-auto transition-transform duration-200 hover:scale-105">
+                  <Button size="lg" className="w-full bg-accent hover:bg-accent/80 text-lg font-bold h-14 mt-auto transition-transform duration-200 hover:scale-105 animate-pulse-subtle">
                     <ShoppingCart className="mr-3" />
                     QUERO ACESSO COMPLETO
                   </Button>
@@ -475,3 +475,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+    
