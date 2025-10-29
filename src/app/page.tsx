@@ -31,6 +31,17 @@ const testimonial3Avatar = getPlaceholderImage('testimonial-3-avatar');
 
 
 export default function HomePage() {
+  const [dateText, setDateText] = React.useState('OFERTA POR TEMPO LIMITADO');
+
+  React.useEffect(() => {
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString('pt-BR', {
+      day: 'numeric',
+      month: 'long',
+    });
+    setDateText(`As vagas se encerram hoje: ${formattedDate}`);
+  }, []);
+
   const navLinks = [
     { name: 'Início', href: '#inicio' },
     { name: 'O Método', href: '#metodo' },
@@ -131,7 +142,7 @@ export default function HomePage() {
       {/* Header */}
       <header className="z-20 fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-md border-b border-border/50">
         <div className="bg-red-600 text-center py-2 text-sm font-bold flex items-center justify-center shadow-lg">
-            <Flame className="mr-2 h-4 w-4 animate-pulse" /> OFERTA POR TEMPO LIMITADO
+            <Flame className="mr-2 h-4 w-4 animate-pulse" /> {dateText}
         </div>
         <nav className="container mx-auto flex items-center justify-between p-4">
             <div className="text-2xl font-bold tracking-tighter">Criat.Dark</div>
