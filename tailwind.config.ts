@@ -97,18 +97,16 @@ export default {
         },
         'pulse-subtle': {
           '0%, 100%': { transform: 'scale(1)' },
-          '50%': { transform: 'scale(1.03)' },
+          '50%': { transform: 'scale(1.02)' },
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'float-and-fade': 'float-and-fade 4s ease-in-out infinite',
-        'pulse-subtle': 'pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'pulse-subtle': 'pulse-subtle 2.5s ease-in-out infinite',
       },
     },
   },
   plugins: [require('tailwindcss-animate')],
 } satisfies Config;
-
-    
