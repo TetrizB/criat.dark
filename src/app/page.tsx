@@ -186,7 +186,7 @@ export default function HomePage() {
             </p>
             <div className="mt-10 relative inline-block">
                 <Image 
-                    src="https://i.postimg.cc/tJ24TjG1/Copia-de-Copia-de-Copia-de-Post-Qroz-4-8-25-1759537252059-Bz-S2s-Ni-W.png"
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Gráfico de vendas mostrando crescimento exponencial."
                     width={600}
                     height={400}
@@ -249,18 +249,6 @@ export default function HomePage() {
         
         <section className="z-10 mt-32 w-full max-w-7xl">
           <div className="text-center">
-            <h2 className="text-4xl font-bold tracking-tighter">O que Acontece Quando Você Entende Isso</h2>
-            <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Essas pessoas não eram especiais. Eram trabalhadoras comuns que entenderam como o sistema realmente funciona.</p>
-            <div className="flex justify-center items-center gap-1 mt-2 text-yellow-400">
-                <Star className="h-4 w-4 fill-current" />
-                <p className="font-semibold">Olhe os resultados de alguns nossos Alunos que aplicaram o Método</p>
-            </div>
-          </div>
-          <ResultsCarousel />
-        </section>
-
-        <section className="z-10 mt-32 w-full max-w-7xl">
-          <div className="text-center">
             <h2 className="text-4xl font-bold tracking-tighter">Reels de Viagens luxuosas</h2>
           </div>
           <VideoCarousel />
@@ -273,6 +261,18 @@ export default function HomePage() {
                 </Link>
             </Button>
           </div>
+        </section>
+
+        <section className="z-10 mt-32 w-full max-w-7xl">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold tracking-tighter">O que Acontece Quando Você Entende Isso</h2>
+            <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Essas pessoas não eram especiais. Eram trabalhadoras comuns que entenderam como o sistema realmente funciona.</p>
+            <div className="flex justify-center items-center gap-1 mt-2 text-yellow-400">
+                <Star className="h-4 w-4 fill-current" />
+                <p className="font-semibold">Olhe os resultados de alguns nossos Alunos que aplicaram o Método</p>
+            </div>
+          </div>
+          <ResultsCarousel />
         </section>
 
 
