@@ -175,16 +175,16 @@ export default function HomePage() {
         </nav>
       </header>
       
-      <main className="container mx-auto flex flex-col items-center px-4 pt-48 sm:pt-56">
+      <main className="container mx-auto flex flex-col items-center px-4 pt-36 sm:pt-48">
         {/* 1. ATENÇÃO (A) - Captura Imediata */}
         <section id="inicio" className="z-10 text-center w-full max-w-5xl">
-            <h1 className="text-5xl font-extrabold tracking-tighter text-white sm:text-7xl">
+            <h1 className="text-5xl font-extrabold tracking-tighter text-white sm:text-7xl md:text-8xl">
                 Monte um Negócio de <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">R$10.000/mês</span> no Instagram Sem Mostrar o Rosto
             </h1>
-            <p className="mt-6 text-lg text-gray-400 max-w-3xl mx-auto">
+            <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
                 Descubra o método usado por perfis anônimos para construir uma audiência e monetizar sem precisar aparecer.
             </p>
-            <div className="mt-10 relative inline-block">
+            <div className="mt-10 flex flex-col items-center gap-8">
                 <Image 
                     src="https://i.postimg.cc/j2WHDT5Y/Copia-de-Copia-de-Copia-de-Post-Qroz-4-8-25-1759537252059-Bz-S2s-Ni-W.png"
                     alt="Gráfico de vendas mostrando crescimento exponencial."
@@ -193,8 +193,8 @@ export default function HomePage() {
                     className="rounded-xl shadow-2xl object-cover"
                     data-ai-hint="sales growth chart"
                 />
-                <div className="absolute -bottom-12 -right-20 hidden md:block">
-                  <GradientCard className="w-80">
+                <div className="w-full max-w-sm md:absolute md:-bottom-12 md:-right-20">
+                  <GradientCard>
                     <div className="p-4 flex items-center gap-4">
                         {testimonial2Avatar && <Image src={testimonial2Avatar.imageUrl} alt="Avatar de aluno" width={56} height={56} className="rounded-full border-2 border-accent/50" data-ai-hint={testimonial2Avatar.imageHint} />}
                         <div>
@@ -209,13 +209,13 @@ export default function HomePage() {
 
         {/* 2. INTERESSE (I) - Construção da Narrativa e Autoridade */}
         <section className="z-10 mt-32 w-full max-w-4xl text-center">
-            <h2 className="text-4xl font-bold tracking-tighter mb-4">Você Sabia?</h2>
-            <p className="text-lg text-gray-400 mb-10 leading-relaxed">A maioria das pessoas falha em monetizar no Instagram porque acredita que precisa de milhões de seguidores ou de uma vida de luxo para exibir. A verdade é que o <span className="text-accent font-bold">engajamento qualificado</span> vale mais do que a popularidade.</p>
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter mb-4">Você Sabia?</h2>
+            <p className="text-lg sm:text-xl text-gray-300 mb-10 leading-relaxed">A maioria das pessoas falha em monetizar no Instagram porque acredita que precisa de milhões de seguidores ou de uma vida de luxo para exibir. A verdade é que o <span className="text-accent font-bold">engajamento qualificado</span> vale mais do que a popularidade.</p>
             
             <GradientCard>
-              <div className="p-8">
-                <h3 className="text-2xl font-bold tracking-tight">A Descoberta que Ninguém te Conta</h3>
-                <p className="text-gray-300 mt-4 leading-relaxed">Durante 1 ano, analisei milhares de perfis e descobri um padrão chocante: <span className="font-bold text-white">73% dos perfis de sucesso não mostram o rosto</span>. Eles usam o que chamo de "conteúdo Dark" e, por isso, têm <span className="font-bold text-accent">340% mais engajamento</span>, pois o foco está 100% no conteúdo, não na pessoa.</p>
+              <div className="p-6 sm:p-8">
+                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">A Descoberta que Ninguém te Conta</h3>
+                <p className="text-gray-300 mt-4 leading-relaxed sm:text-lg">Durante 1 ano, analisei milhares de perfis e descobri um padrão chocante: <span className="font-bold text-white">73% dos perfis de sucesso não mostram o rosto</span>. Eles usam o que chamo de "conteúdo Dark" e, por isso, têm <span className="font-bold text-accent">340% mais engajamento</span>, pois o foco está 100% no conteúdo, não na pessoa.</p>
               </div>
             </GradientCard>
         </section>
@@ -225,16 +225,16 @@ export default function HomePage() {
           <ContainerScroll
             titleComponent={
               <>
-                <h2 className="text-4xl font-semibold text-white tracking-tighter">
+                <h2 className="text-4xl sm:text-5xl font-semibold text-white tracking-tighter">
                   A Arquitetura da Invisibilidade <br />
-                  <span className="text-5xl md:text-[6.5rem] font-bold mt-1 leading-none text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
+                  <span className="text-5xl md:text-[6rem] font-bold mt-1 leading-none text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
                     Os 4 Pilares do Método
                   </span>
                 </h2>
               </>
             }
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4 bg-transparent h-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 p-4 bg-transparent h-full">
               {modules.map((module, index) => (
                 <GradientCard key={index} className="flex flex-col justify-center">
                   <div className="p-6">
@@ -247,14 +247,14 @@ export default function HomePage() {
           </ContainerScroll>
         </section>
         
-        <section className="z-10 mt-32 w-full max-w-7xl">
+        <section className="z-10 mt-20 sm:mt-32 w-full max-w-7xl">
           <div className="text-center">
-            <h2 className="text-4xl font-bold tracking-tighter">Reels de Viagens luxuosas</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter">Reels de Viagens luxuosas</h2>
           </div>
           <VideoCarousel />
-          <p className="text-center text-gray-400 mt-4 text-lg">edite eles em seus videos ou utilize-os como estão</p>
+          <p className="text-center text-gray-300 mt-4 text-lg">edite eles em seus videos ou utilize-os como estão</p>
           <div className="mt-8 text-center">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/80 text-lg font-bold h-14 transition-transform duration-200 hover:scale-105">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/80 text-lg font-bold h-14 transition-transform duration-200 hover:scale-105 px-8">
                 <Link href="#ofertas">
                     <ShoppingCart className="mr-3" />
                     Quero ter acesso agora
@@ -265,8 +265,8 @@ export default function HomePage() {
 
         <section className="z-10 mt-32 w-full max-w-7xl">
           <div className="text-center">
-            <h2 className="text-4xl font-bold tracking-tighter">O que Acontece Quando Você Entende Isso</h2>
-            <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Essas pessoas não eram especiais. Eram trabalhadoras comuns que entenderam como o sistema realmente funciona.</p>
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter">O que Acontece Quando Você Entende Isso</h2>
+            <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">Essas pessoas não eram especiais. Eram trabalhadoras comuns que entenderam como o sistema realmente funciona.</p>
             <div className="flex justify-center items-center gap-1 mt-2 text-yellow-400">
                 <Star className="h-4 w-4 fill-current" />
                 <p className="font-semibold">Olhe os resultados de alguns nossos Alunos que aplicaram o Método</p>
@@ -278,8 +278,8 @@ export default function HomePage() {
 
         {/* 3. DESEJO (D) - Detalhamento da Oferta */}
         <section id="ofertas" className="z-10 mt-32 w-full max-w-6xl">
-           <h2 className="text-center text-4xl font-bold tracking-tighter mb-4">O que você vai receber?</h2>
-            <p className="text-center text-gray-400 mb-16 text-lg">Tudo que você precisa para sair do zero e faturar alto, no anonimato.</p>
+           <h2 className="text-center text-4xl sm:text-5xl font-bold tracking-tighter mb-4">O que você vai receber?</h2>
+            <p className="text-center text-gray-300 mb-16 text-lg">Tudo que você precisa para sair do zero e faturar alto, no anonimato.</p>
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               {/* Offer 1: Super Pack */}
               <GradientCard className="flex flex-col">
@@ -338,8 +338,8 @@ export default function HomePage() {
 
         {/* Bonus Section */}
         <section className="z-10 mt-32 w-full max-w-6xl">
-            <h2 className="text-center text-4xl font-bold tracking-tighter">Desbloqueie um Arsenal de <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">Bônus Exclusivos</span></h2>
-            <p className="text-center text-gray-400 mt-4 text-lg max-w-3xl mx-auto">Comprando hoje, você leva todos esses presentes para acelerar seus resultados:</p>
+            <h2 className="text-center text-4xl sm:text-5xl font-bold tracking-tighter">Desbloqueie um Arsenal de <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">Bônus Exclusivos</span></h2>
+            <p className="text-center text-gray-300 mt-4 text-lg max-w-3xl mx-auto">Comprando hoje, você leva todos esses presentes para acelerar seus resultados:</p>
             <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {bonuses.map((bonus, index) => (
                     <GradientCard key={index}>
@@ -358,8 +358,8 @@ export default function HomePage() {
         {/* Garantia */}
         <section className="z-10 mt-32 w-full">
            <div className="text-center text-gray-300">
-             <div className="bg-green-900/30 border border-green-400/50 rounded-xl p-8 max-w-3xl mx-auto backdrop-blur-sm">
-                <h4 className="font-bold text-2xl text-white">Garantia Incondicional de 7 Dias</h4>
+             <div className="bg-green-900/30 border border-green-400/50 rounded-xl p-6 sm:p-8 max-w-3xl mx-auto backdrop-blur-sm">
+                <h4 className="font-bold text-2xl sm:text-3xl text-white">Garantia Incondicional de 7 Dias</h4>
                 <p className="mt-4 text-lg leading-relaxed">Assumo todo o risco para você. Teste o método por 7 dias completos. Se não for para você, devolvemos 100% do seu dinheiro. Sem perguntas, sem estresse.</p>
              </div>
            </div>
@@ -367,7 +367,7 @@ export default function HomePage() {
         
         {/* "Talvez Você Esteja Pensando" */}
         <section className="z-10 mt-32 w-full max-w-5xl">
-            <h2 className="text-center text-4xl font-bold tracking-tighter">
+            <h2 className="text-center text-4xl sm:text-5xl font-bold tracking-tighter">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">Talvez Você Esteja Pensando...</span>
             </h2>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -392,8 +392,8 @@ export default function HomePage() {
 
         {/* Prova Social - Depoimentos */}
         <section id="depoimentos" className="z-10 mt-32 w-full max-w-7xl">
-            <h2 className="text-center text-4xl font-bold tracking-tighter">Resultados de Alunos que Aplicaram o Método</h2>
-            <p className="text-center text-gray-400 mt-4 text-lg">Eles também começaram do zero, como você.</p>
+            <h2 className="text-center text-4xl sm:text-5xl font-bold tracking-tighter">Resultados de Alunos que Aplicaram o Método</h2>
+            <p className="text-center text-gray-300 mt-4 text-lg">Eles também começaram do zero, como você.</p>
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
                 <GradientCard>
                     <CardContent className="pt-8 text-center">
@@ -427,7 +427,7 @@ export default function HomePage() {
 
         {/* 4. AÇÃO (A) - Chamada Final e Urgência */}
         <section className="z-10 mt-32 text-center w-full max-w-4xl">
-            <h2 className="text-4xl font-bold tracking-tighter">Uma Última Reflexão</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter">Uma Última Reflexão</h2>
             <div className="mt-6 text-lg text-gray-300 space-y-5 leading-relaxed">
                 <p>Imagine acordar amanhã sabendo que seu celular está gerando vendas para você enquanto você dorme, viaja ou curte sua família. Sem reuniões, sem chefe, sem a obrigação de postar sua vida.</p>
                 <p>Essa é a realidade que o Digital Dark oferece. A decisão é sua: continuar sentindo que "mais uma semana foi perdida" ou tomar a atitude que pode te transformar no exemplo de superação da sua família.</p>
@@ -446,7 +446,7 @@ export default function HomePage() {
 
         {/* FAQ Section */}
         <section id="faq" className="z-10 my-32 w-full max-w-4xl">
-          <h2 className="text-center text-4xl font-bold tracking-tighter">Perguntas Frequentes</h2>
+          <h2 className="text-center text-4xl sm:text-5xl font-bold tracking-tighter">Perguntas Frequentes</h2>
           <Accordion type="single" collapsible className="mt-12 w-full space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="border border-border/50 rounded-lg bg-card/50 backdrop-blur-sm">
@@ -477,3 +477,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+    
