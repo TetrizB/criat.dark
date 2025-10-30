@@ -179,7 +179,7 @@ export default function HomePage() {
         {/* 1. ATENÇÃO (A) - Captura Imediata */}
         <section id="inicio" className="z-10 text-center w-full max-w-5xl">
             <h1 className="text-5xl font-extrabold tracking-tighter text-white sm:text-7xl">
-                Crie um Negócio de <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">R$10.000/mês</span> no Instagram Sem Mostrar o Rosto
+                Monte um Negócio de <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">R$10.000/mês</span> no Instagram Sem Mostrar o Rosto
             </h1>
             <p className="mt-6 text-lg text-gray-400 max-w-3xl mx-auto">
                 Descubra o método usado por perfis anônimos para construir uma audiência e monetizar sem precisar aparecer.
@@ -249,6 +249,18 @@ export default function HomePage() {
         
         <section className="z-10 mt-32 w-full max-w-7xl">
           <div className="text-center">
+            <h2 className="text-4xl font-bold tracking-tighter">O que Acontece Quando Você Entende Isso</h2>
+            <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Essas pessoas não eram especiais. Eram trabalhadoras comuns que entenderam como o sistema realmente funciona.</p>
+            <div className="flex justify-center items-center gap-1 mt-2 text-yellow-400">
+                <Star className="h-4 w-4 fill-current" />
+                <p className="font-semibold">Olhe os resultados de alguns nossos Alunos que aplicaram o Método</p>
+            </div>
+          </div>
+          <ResultsCarousel />
+        </section>
+
+        <section className="z-10 mt-32 w-full max-w-7xl">
+          <div className="text-center">
             <h2 className="text-4xl font-bold tracking-tighter">Reels de Viagens luxuosas</h2>
           </div>
           <VideoCarousel />
@@ -261,18 +273,6 @@ export default function HomePage() {
                 </Link>
             </Button>
           </div>
-        </section>
-
-        <section className="z-10 mt-32 w-full max-w-7xl">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold tracking-tighter">O que Acontece Quando Você Entende Isso</h2>
-            <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Essas pessoas não eram especiais. Eram trabalhadoras comuns que entenderam como o sistema realmente funciona.</p>
-            <div className="flex justify-center items-center gap-1 mt-2 text-yellow-400">
-                <Star className="h-4 w-4 fill-current" />
-                <p className="font-semibold">Olhe os resultados de alguns nossos Alunos que aplicaram o Método</p>
-            </div>
-          </div>
-          <ResultsCarousel />
         </section>
 
 
@@ -477,5 +477,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-    
