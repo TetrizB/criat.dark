@@ -186,7 +186,7 @@ export default function HomePage() {
             </p>
             <div className="mt-10 relative inline-block">
                 <Image 
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="https://i.postimg.cc/j2WHDT5Y/Copia-de-Copia-de-Copia-de-Post-Qroz-4-8-25-1759537252059-Bz-S2s-Ni-W.png"
                     alt="Gráfico de vendas mostrando crescimento exponencial."
                     width={600}
                     height={400}
