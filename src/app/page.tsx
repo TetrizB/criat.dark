@@ -179,28 +179,30 @@ export default function HomePage() {
         {/* 1. ATENÇÃO (A) - Captura Imediata */}
         <section id="inicio" className="z-10 text-center w-full max-w-5xl">
             <h1 className="text-5xl font-extrabold tracking-tighter text-white sm:text-7xl">
-                Ganhe de <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">R$5mil a R$100mil</span> no Instagram Sem Mostrar o Rosto
+                Crie um Negócio de <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">R$10.000/mês</span> no Instagram Sem Mostrar o Rosto
             </h1>
             <p className="mt-6 text-lg text-gray-400 max-w-3xl mx-auto">
-                (E a descoberta perturbadora que mudou tudo sobre monetização no digital)
+                Descubra o método usado por perfis anônimos para construir uma audiência e monetizar sem precisar aparecer.
             </p>
             <div className="mt-10 relative inline-block">
                 <Image 
                     src="https://i.postimg.cc/g0qR2j3B/Copia-de-Copia-de-Copia-de-Post-Qroz-4-8-25-1759537252059-Bz-S2s-Ni-W.png"
-                    alt="Resultado de vendas"
+                    alt="Gráfico de vendas mostrando crescimento exponencial."
                     width={600}
-                    height={600}
-                    className="rounded-xl shadow-2xl"
-                    data-ai-hint="sales result"
+                    height={400}
+                    className="rounded-xl shadow-2xl object-cover"
+                    data-ai-hint="sales growth chart"
                 />
-                <div className="animate-float-and-fade absolute -right-16 top-1/4 flex items-center gap-3 rounded-xl border border-border bg-card/80 p-3 shadow-lg backdrop-blur-sm">
-                    <div className="rounded-full bg-green-500/20 p-2">
-                        <Bell className="h-5 w-5 text-green-400" />
+                <div className="absolute -bottom-12 -right-20 hidden md:block">
+                  <GradientCard className="w-80">
+                    <div className="p-4 flex items-center gap-4">
+                        {testimonial2Avatar && <Image src={testimonial2Avatar.imageUrl} alt="Avatar de aluno" width={56} height={56} className="rounded-full border-2 border-accent/50" data-ai-hint={testimonial2Avatar.imageHint} />}
+                        <div>
+                          <p className="font-bold text-sm text-white">"R$12.300 em 45 dias. O melhor? Totalmente no anônimato."</p>
+                          <p className="text-xs text-gray-400 mt-1">- Lucas P.</p>
+                        </div>
                     </div>
-                    <div>
-                        <p className="text-sm font-bold text-white">+R$97,00 em vendas</p>
-                        <p className="text-xs text-gray-400">agora mesmo</p>
-                    </div>
+                  </GradientCard>
                 </div>
             </div>
         </section>
