@@ -430,13 +430,13 @@ export default function HomePage() {
         <section className="z-10 mt-32 w-full flex justify-center">
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-accent to-blue-500 rounded-lg blur-xl opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-            <div className="relative bg-card p-4 rounded-lg leading-none flex items-center">
+            <div className="relative leading-none flex items-center">
               <Image
                 src="https://i.postimg.cc/t4GfvgZt/Design-sem-nome.png"
                 alt="Selo de Garantia de 7 dias"
                 width={400}
                 height={400}
-                className="object-contain"
+                className="object-contain rounded-lg"
                 data-ai-hint="guarantee badge"
               />
             </div>
