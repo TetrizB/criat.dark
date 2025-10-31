@@ -194,7 +194,7 @@ export default function HomePage() {
                     className="rounded-xl shadow-2xl object-cover"
                     data-ai-hint="sales growth chart"
                 />
-                <div className="w-full max-w-sm md:absolute md:-bottom-12 md:-right-20">
+                <div className="w-full max-w-sm">
                   <GradientCard>
                     <div className="p-4 flex items-center gap-4">
                         {testimonial2Avatar && <Image src={testimonial2Avatar.imageUrl} alt="Avatar de aluno" width={56} height={56} className="rounded-full border-2 border-accent/50" data-ai-hint={testimonial2Avatar.imageHint} />}
