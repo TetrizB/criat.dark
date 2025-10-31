@@ -358,12 +358,22 @@ export default function HomePage() {
 
         {/* Garantia */}
         <section className="z-10 mt-32 w-full">
-           <div className="text-center text-gray-300">
-             <div className="bg-green-900/30 border border-green-400/50 rounded-xl p-6 sm:p-8 max-w-3xl mx-auto backdrop-blur-sm">
-                <h4 className="font-bold text-2xl sm:text-3xl text-white">Garantia Incondicional de 7 Dias</h4>
-                <p className="mt-4 text-lg leading-relaxed">Assumo todo o risco para você. Teste o método por 7 dias completos. Se não for para você, devolvemos 100% do seu dinheiro. Sem perguntas, sem estresse.</p>
-             </div>
-           </div>
+            <div className="text-center text-gray-300">
+                <div className="bg-green-900/30 border border-green-400/50 rounded-xl p-6 sm:p-8 max-w-4xl mx-auto backdrop-blur-sm flex flex-col md:flex-row items-center gap-8">
+                    <Image 
+                        src="https://i.postimg.cc/9f1wN1br/selo.png"
+                        alt="Selo de Garantia de 7 dias"
+                        width={150}
+                        height={150}
+                        className="object-contain flex-shrink-0"
+                        data-ai-hint="guarantee badge"
+                    />
+                    <div className="text-left">
+                        <h4 className="font-bold text-2xl sm:text-3xl text-white">Garantia Incondicional de 7 Dias</h4>
+                        <p className="mt-4 text-lg leading-relaxed">Assumo todo o risco para você. Teste o método por 7 dias completos. Se não for para você, devolvemos 100% do seu dinheiro. Sem perguntas, sem estresse.</p>
+                    </div>
+                </div>
+            </div>
         </section>
         
         {/* "Talvez Você Esteja Pensando" */}
@@ -430,7 +440,7 @@ export default function HomePage() {
         <section className="z-10 mt-32 w-full flex justify-center">
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-accent to-blue-500 rounded-lg blur-xl opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-            <div className="relative leading-none flex items-center">
+            <div className="relative bg-transparent leading-none flex items-center">
               <Image
                 src="https://i.postimg.cc/t4GfvgZt/Design-sem-nome.png"
                 alt="Selo de Garantia de 7 dias"
