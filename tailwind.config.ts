@@ -98,6 +98,17 @@ export default {
         'pulse-subtle': {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.01)' },
+        },
+        'tilt': {
+          '0%, 50%, 100%': {
+            transform: 'rotate(0deg)',
+          },
+          '25%': {
+            transform: 'rotate(0.5deg)',
+          },
+          '75%': {
+            transform: 'rotate(-0.5deg)',
+          },
         }
       },
       animation: {
@@ -105,6 +116,7 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'float-and-fade': 'float-and-fade 4s ease-in-out infinite',
         'pulse-subtle': 'pulse-subtle 5s ease-in-out infinite',
+        'tilt': 'tilt 10s linear infinite',
       },
     },
   },

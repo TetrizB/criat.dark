@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -427,14 +428,19 @@ export default function HomePage() {
 
         {/* Garantia Selo */}
         <section className="z-10 mt-32 w-full flex justify-center">
-          <Image
-            src="https://i.postimg.cc/t4GfvgZt/Design-sem-nome.png"
-            alt="Selo de Garantia de 7 dias"
-            width={400}
-            height={400}
-            className="object-contain"
-            data-ai-hint="guarantee badge"
-          />
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-accent to-blue-500 rounded-lg blur-xl opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+            <div className="relative bg-card p-4 rounded-lg leading-none flex items-center">
+              <Image
+                src="https://i.postimg.cc/t4GfvgZt/Design-sem-nome.png"
+                alt="Selo de Garantia de 7 dias"
+                width={400}
+                height={400}
+                className="object-contain"
+                data-ai-hint="guarantee badge"
+              />
+            </div>
+          </div>
         </section>
 
         {/* 4. AÇÃO (A) - Chamada Final e Urgência */}
@@ -489,5 +495,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-    
