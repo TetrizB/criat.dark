@@ -43,7 +43,7 @@ export default function MembersPage() {
     {
       title: "Shape",
       description: "Conteúdo de academia e lifestyle.",
-      imageUrl: "https://i.postimg.cc/zBB5VJpX/VIAGENS-4.png", // Using the same image as memes as per request
+      imageUrl: "https://i.postimg.cc/Gmwcqn3V/VIAGENS-2.png",
       imageHint: "fitness lifestyle",
       hideOverlay: true,
     },
