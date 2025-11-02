@@ -109,7 +109,7 @@ export default function MembersPage() {
         </section>
 
         <section>
-            <h2 className="text-2xl font-bold tracking-tighter mb-8">Banco de Vídeos</h2>
+            <h2 className="text-2xl font-bold tracking-tighter mb-8">CORTES VIRAIS</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {videoBanks.map((bank, index) => (
                     <div key={index} className="group relative rounded-xl overflow-hidden border border-border/30 shadow-lg">
