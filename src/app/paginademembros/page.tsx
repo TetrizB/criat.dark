@@ -21,6 +21,7 @@ export default function MembersPage() {
       imageUrl: "https://i.postimg.cc/N0sdcLfk/VIAGENS.png",
       imageHint: "luxury travel",
       hideOverlay: true,
+      linkUrl: "https://drive.google.com/drive/folders/1HGzOM7miX1TM1-lkt_8XH7mlt0h2rXRL",
     },
     {
       title: "Relógios e Carros",
@@ -28,6 +29,7 @@ export default function MembersPage() {
       imageUrl: "https://i.postimg.cc/yYhh8BGQ/VIAGENS-1.png",
       imageHint: "luxury watches cars",
       hideOverlay: true,
+      linkUrl: "https://drive.google.com/drive/folders/1H7LK1FbyfKuM7nDm3DKssogXot9Sf-gA",
     },
     {
       title: "Podcast Brasil",
@@ -35,6 +37,7 @@ export default function MembersPage() {
       imageUrl: "https://i.postimg.cc/QdQjzYHB/VIAGENS-3.png",
       imageHint: "podcast brazil",
       hideOverlay: true,
+      linkUrl: "https://drive.google.com/drive/folders/1EAlBRwQstPIwzKUtj0P2iUjJ8fp4jBDt",
     },
     {
       title: "Memes",
@@ -42,6 +45,7 @@ export default function MembersPage() {
       imageUrl: "https://i.postimg.cc/zBB5VJpX/VIAGENS-4.png",
       imageHint: "viral memes",
       hideOverlay: true,
+      linkUrl: "https://drive.google.com/drive/folders/1HGzOM7miX1TM1-lkt_8XH7mlt0h2rXRL",
     },
     {
       title: "Shape",
@@ -49,6 +53,7 @@ export default function MembersPage() {
       imageUrl: "https://i.postimg.cc/Gmwcqn3V/VIAGENS-2.png",
       imageHint: "fitness lifestyle",
       hideOverlay: true,
+      linkUrl: "https://drive.google.com/drive/folders/1H7LK1FbyfKuM7nDm3DKssogXot9Sf-gA",
     },
     {
       title: "Homens de Poder",
@@ -56,6 +61,7 @@ export default function MembersPage() {
       imageUrl: "https://i.postimg.cc/j5rgFvnK/VIAGENS-5.png",
       imageHint: "powerful men success",
       hideOverlay: true,
+      linkUrl: "https://drive.google.com/drive/folders/1EAlBRwQstPIwzKUtj0P2iUjJ8fp4jBDt",
     },
     {
       title: "Receitas Virais",
@@ -127,35 +133,48 @@ export default function MembersPage() {
                 </div>
             </Link>
         </section>
-
+        
         <section className="mb-20">
-            <h2 className="text-2xl font-bold tracking-tighter mb-8">CORTES VIRAIS</h2>
+            <h2 className="text-2xl font-bold tracking-tighter mb-2">CORTES VIRAIS</h2>
+            <p className="text-gray-400 mb-8">Clique em qualquer card para ser redirecionado para a pasta com os vídeos.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                {videoBanks.map((bank, index) => (
-                    <div key={index} className="group relative rounded-xl overflow-hidden border border-border/30 shadow-lg">
-                        <Image 
-                            src={bank.imageUrl}
-                            alt={bank.title}
-                            width={600}
-                            height={400}
-                            className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
-                            data-ai-hint={bank.imageHint}
-                        />
-                        {bank.hideOverlay ? null : (
-                          <>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                            <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                                <h3 className="text-xl font-bold text-white mb-1">{bank.title}</h3>
-                                <p className="text-gray-300 text-sm mb-4">{bank.description}</p>
-                                <Button className="w-full bg-accent hover:bg-accent/80 transition-transform duration-200 group-hover:scale-105">
-                                    <Download className="mr-2 h-4 w-4" />
-                                    Baixar Pacote
-                                </Button>
-                            </div>
-                          </>
-                        )}
-                    </div>
-                ))}
+                {videoBanks.map((bank, index) => {
+                    const cardContent = (
+                        <div className="group relative rounded-xl overflow-hidden border border-border/30 shadow-lg h-full">
+                            <Image 
+                                src={bank.imageUrl}
+                                alt={bank.title}
+                                width={600}
+                                height={400}
+                                className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+                                data-ai-hint={bank.imageHint}
+                            />
+                            {bank.hideOverlay ? null : (
+                              <>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                                <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                                    <h3 className="text-xl font-bold text-white mb-1">{bank.title}</h3>
+                                    <p className="text-gray-300 text-sm mb-4">{bank.description}</p>
+                                    <Button className="w-full bg-accent hover:bg-accent/80 transition-transform duration-200 group-hover:scale-105">
+                                        <Download className="mr-2 h-4 w-4" />
+                                        Baixar Pacote
+                                    </Button>
+                                </div>
+                              </>
+                            )}
+                        </div>
+                    );
+
+                    if (bank.linkUrl) {
+                        return (
+                            <Link key={index} href={bank.linkUrl} target="_blank" rel="noopener noreferrer" className="block h-full">
+                                {cardContent}
+                            </Link>
+                        );
+                    }
+
+                    return <div key={index}>{cardContent}</div>;
+                })}
             </div>
         </section>
 
