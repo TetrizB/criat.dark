@@ -61,9 +61,16 @@ export default function MembersPage() {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-12">
-        <section className="mb-16">
-          <h1 className="text-4xl font-bold tracking-tighter">Bem-vindo, {userName}!</h1>
-          <p className="text-lg text-gray-400 mt-2">Continue de onde parou e acelere seus resultados.</p>
+        <section className="mb-12">
+          <Image
+            src="https://i.postimg.cc/nh6q3g8G/lanches-fit-de-nutri-8.png"
+            alt="Banner da Área de Membros"
+            width={1200}
+            height={400}
+            className="rounded-lg object-cover w-full"
+            data-ai-hint="membership area banner"
+            priority
+          />
         </section>
 
         <section className="mb-20">
