@@ -68,12 +68,14 @@ export default function MembersPage() {
       description: "Conteúdo delicioso e fácil de compartilhar.",
       imageUrl: "https://picsum.photos/seed/recipe/600/400",
       imageHint: "food recipe",
+      hideOverlay: true,
     },
     {
       title: "Curiosidades Rápidas",
       description: "Pílulas de conhecimento que prendem a atenção.",
       imageUrl: "https://picsum.photos/seed/curiosity/600/400",
       imageHint: "abstract knowledge",
+      hideOverlay: true,
     },
   ];
 
