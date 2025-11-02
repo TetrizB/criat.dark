@@ -13,10 +13,10 @@ export default function MembersPage() {
 
   const videoBanks = [
     {
-      title: "Cortes Motivacionais",
+      title: "Viagens de Luxo",
       description: "Vídeos de alto impacto para engajamento.",
-      imageUrl: "https://picsum.photos/seed/motivation/600/400",
-      imageHint: "motivational landscape",
+      imageUrl: "https://i.postimg.cc/N0sdcLfk/VIAGENS.png",
+      imageHint: "luxury travel",
     },
     {
       title: "Receitas Virais",
