@@ -17,6 +17,7 @@ export default function MembersPage() {
       description: "Vídeos de alto impacto para engajamento.",
       imageUrl: "https://i.postimg.cc/N0sdcLfk/VIAGENS.png",
       imageHint: "luxury travel",
+      hideOverlay: true,
     },
     {
       title: "Receitas Virais",
@@ -120,15 +121,19 @@ export default function MembersPage() {
                             className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
                             data-ai-hint={bank.imageHint}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                        <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                            <h3 className="text-xl font-bold text-white mb-1">{bank.title}</h3>
-                            <p className="text-gray-300 text-sm mb-4">{bank.description}</p>
-                            <Button className="w-full bg-accent hover:bg-accent/80 transition-transform duration-200 group-hover:scale-105">
-                                <Download className="mr-2 h-4 w-4" />
-                                Baixar Pacote
-                            </Button>
-                        </div>
+                        {(bank as any).hideOverlay ? null : (
+                          <>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                            <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                                <h3 className="text-xl font-bold text-white mb-1">{bank.title}</h3>
+                                <p className="text-gray-300 text-sm mb-4">{bank.description}</p>
+                                <Button className="w-full bg-accent hover:bg-accent/80 transition-transform duration-200 group-hover:scale-105">
+                                    <Download className="mr-2 h-4 w-4" />
+                                    Baixar Pacote
+                                </Button>
+                            </div>
+                          </>
+                        )}
                     </div>
                 ))}
             </div>
