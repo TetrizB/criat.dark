@@ -1,11 +1,14 @@
 
+'use client';
+
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { modules } from '@/lib/content';
 import { cn } from '@/lib/utils';
-import { PlayCircle, Search, Settings, Download } from 'lucide-react';
+import { PlayCircle, Search, Settings, Download, Gift, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function MembersPage() {
   const userName = "Aluno"; // Placeholder for user name
@@ -103,6 +106,28 @@ export default function MembersPage() {
           />
         </section>
 
+        {/* Bonus Banner Section */}
+        <section className="mb-20">
+            <Link href="/bonus" className="block group">
+                <div className="relative rounded-xl p-px bg-gradient-to-r from-accent/70 to-blue-500/70 hover:shadow-2xl hover:shadow-accent/20 transition-all duration-300 transform hover:-translate-y-1">
+                    <div className="relative rounded-[11px] p-8 bg-card/80 backdrop-blur-sm flex items-center justify-between">
+                        <div className="flex items-center gap-6">
+                            <Gift className="h-12 w-12 text-accent flex-shrink-0" />
+                            <div>
+                                <h2 className="text-2xl font-bold tracking-tighter text-white">
+                                    Bônus Exclusivos Desbloqueados!
+                                </h2>
+                                <p className="text-gray-400 mt-1">Clique aqui para ver os presentes que preparamos para você.</p>
+                            </div>
+                        </div>
+                        <Button variant="ghost" size="icon" className="text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-transform duration-300">
+                            <ArrowRight className="h-6 w-6" />
+                        </Button>
+                    </div>
+                </div>
+            </Link>
+        </section>
+
         <section className="mb-20">
             <h2 className="text-2xl font-bold tracking-tighter mb-8">CORTES VIRAIS</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -116,7 +141,7 @@ export default function MembersPage() {
                             className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
                             data-ai-hint={bank.imageHint}
                         />
-                        {(bank as any).hideOverlay ? null : (
+                        {bank.hideOverlay ? null : (
                           <>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                             <div className="absolute inset-0 p-6 flex flex-col justify-end">
@@ -167,7 +192,6 @@ export default function MembersPage() {
             ))}
           </div>
         </section>
-
       </main>
     </div>
   );
