@@ -27,6 +27,27 @@ export default function MembersPage() {
       hideOverlay: true,
     },
     {
+      title: "Podcast Brasil",
+      description: "Cortes de podcasts brasileiros.",
+      imageUrl: "https://i.postimg.cc/QdQjzYHB/VIAGENS-3.png",
+      imageHint: "podcast brazil",
+      hideOverlay: true,
+    },
+    {
+      title: "Memes",
+      description: "Memes virais para engajamento.",
+      imageUrl: "https://i.postimg.cc/zBB5VJpX/VIAGENS-4.png",
+      imageHint: "viral memes",
+      hideOverlay: true,
+    },
+    {
+      title: "Shape",
+      description: "Conteúdo de academia e lifestyle.",
+      imageUrl: "https://i.postimg.cc/zBB5VJpX/VIAGENS-4.png", // Using the same image as memes as per request
+      imageHint: "fitness lifestyle",
+      hideOverlay: true,
+    },
+    {
       title: "Receitas Virais",
       description: "Conteúdo delicioso e fácil de compartilhar.",
       imageUrl: "https://picsum.photos/seed/recipe/600/400",
