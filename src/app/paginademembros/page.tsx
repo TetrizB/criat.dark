@@ -48,6 +48,13 @@ export default function MembersPage() {
       hideOverlay: true,
     },
     {
+      title: "Homens de Poder",
+      description: "Conteúdo sobre sucesso e mentalidade.",
+      imageUrl: "https://i.postimg.cc/j5rgFvnK/VIAGENS-5.png",
+      imageHint: "powerful men success",
+      hideOverlay: true,
+    },
+    {
       title: "Receitas Virais",
       description: "Conteúdo delicioso e fácil de compartilhar.",
       imageUrl: "https://picsum.photos/seed/recipe/600/400",
