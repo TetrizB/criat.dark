@@ -22,7 +22,7 @@ export default function BonusPage() {
     description: "Eleve o nível dos seus posts com um arsenal de templates 100% editáveis no Canva. Crie um feed profissional em minutos e atraia mais seguidores e clientes.",
     imageUrl: "https://mulknishdhiyvgfpdmjq.supabase.co/storage/v1/object/public/post-thumbnails/thumbnails/1761707553225-wai9mvmw8br.webp",
     imageHint: "design templates mockup",
-    price: "R$97",
+    price: "R$14,90",
     checkoutUrl: "#", // Placeholder URL
   };
 
