@@ -1,13 +1,20 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { Gift, Sparkles, ArrowRight } from 'lucide-react';
+import { Gift, Sparkles, ArrowRight, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import React, { useState } from 'react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
+import { DialogClose } from '@radix-ui/react-dialog';
 
 export default function BonusPage() {
+  const [couponCode, setCouponCode] = useState('');
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const bonus = {
     title: "Pack de Design para Criativos",
@@ -18,6 +25,19 @@ export default function BonusPage() {
     price: "R$97",
     checkoutUrl: "#", // Placeholder URL
   };
+
+  const correctCoupon = "ABA321";
+  const accessLink = "#"; // Placeholder for the actual access link
+
+  const handleApplyCoupon = () => {
+    if (couponCode.toUpperCase() === correctCoupon) {
+      setIsDialogOpen(true);
+      setError(null);
+    } else {
+      setError("Código de cupom inválido.");
+    }
+  };
+
 
   return (
     <div className="relative min-h-screen w-full text-white overflow-x-hidden">
@@ -70,9 +90,16 @@ export default function BonusPage() {
                                 <div className="mb-6">
                                     <label htmlFor="coupon" className="text-xs font-bold text-gray-400 uppercase tracking-wider">Tem um cupom?</label>
                                     <div className="flex items-center gap-2 mt-2">
-                                        <Input id="coupon" placeholder="Seu código aqui" className="bg-primary/50 border-border" />
-                                        <Button variant="secondary" className="flex-shrink-0">Aplicar</Button>
+                                        <Input
+                                          id="coupon"
+                                          placeholder="Seu código aqui"
+                                          className="bg-primary/50 border-border"
+                                          value={couponCode}
+                                          onChange={(e) => setCouponCode(e.target.value)}
+                                        />
+                                        <Button variant="secondary" className="flex-shrink-0" onClick={handleApplyCoupon}>Aplicar</Button>
                                     </div>
+                                    {error && <p className="text-red-500 text-xs mt-2">{error}</p>}
                                 </div>
                                 
                                 <Button size="lg" className="w-full bg-accent hover:bg-accent/80 text-lg font-bold h-14 transition-transform duration-200 hover:scale-105">
@@ -105,6 +132,33 @@ export default function BonusPage() {
           <p>© {new Date().getFullYear()} Criat.Dark. Todos os direitos reservados.</p>
         </div>
       </footer>
+
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="sm:max-w-md bg-card border-accent/50 text-white">
+          <DialogHeader className="items-center text-center">
+            <div className="p-3 bg-green-500/20 rounded-full w-fit mb-4">
+              <CheckCircle className="h-8 w-8 text-green-400" />
+            </div>
+            <DialogTitle className="text-2xl">Cupom Ativado com Sucesso!</DialogTitle>
+            <DialogDescription className="text-gray-400 pt-2">
+              Seu acesso ao Pack de Design para Criativos foi liberado.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="py-4">
+              <Button asChild className="w-full bg-accent hover:bg-accent/80">
+                <Link href={accessLink}>Clique aqui para acessar seu Pack</Link>
+              </Button>
+          </div>
+          <DialogFooter className="sm:justify-center">
+            <DialogClose asChild>
+              <Button type="button" variant="ghost">
+                Fechar
+              </Button>
+            </DialogClose>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
     </div>
   );
 }
