@@ -20,6 +20,13 @@ export default function MembersPage() {
       hideOverlay: true,
     },
     {
+      title: "Relógios e Carros",
+      description: "Conteúdo sobre relógios e carros de luxo.",
+      imageUrl: "https://i.postimg.cc/yYhh8BGQ/VIAGENS-1.png",
+      imageHint: "luxury watches cars",
+      hideOverlay: true,
+    },
+    {
       title: "Receitas Virais",
       description: "Conteúdo delicioso e fácil de compartilhar.",
       imageUrl: "https://picsum.photos/seed/recipe/600/400",
@@ -31,12 +38,6 @@ export default function MembersPage() {
       imageUrl: "https://picsum.photos/seed/curiosity/600/400",
       imageHint: "abstract knowledge",
     },
-    {
-        title: "Dicas Fitness",
-        description: "Inspire um estilo de vida saudável.",
-        imageUrl: "https://picsum.photos/seed/fitness/600/400",
-        imageHint: "fitness workout",
-    }
   ];
 
   return (
