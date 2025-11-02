@@ -4,7 +4,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { Gift, Sparkles, ArrowRight, CheckCircle } from 'lucide-react';
+import { Gift, Sparkles, ArrowRight, CheckCircle, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -27,7 +27,17 @@ export default function BonusPage() {
   };
 
   const correctCoupon = "ABA321";
-  const accessLink = "#"; // Placeholder for the actual access link
+  
+  const accessLinks = [
+    { name: "Feed Tráfego Pago Azul", url: "https://www.canva.com/design/DAGmDFqnYds/CUrrr8m5HW27pcZ-W-hDcg/view?utm_content=DAGmDFqnYds&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" },
+    { name: "Feed Tráfego Pago Verde", url: "https://www.canva.com/design/DAGTAYDvyW8/XGr7fLC1YtJ4IXQEK9SM6Q/view?utm_content=DAGTAYDvyW8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" },
+    { name: "Social Media Vermelho", url: "https://www.canva.com/design/DAGmDPtQW2k/HRoyHZBRYb8E9yZWND1XMg/view?utm_content=DAGmDPtQW2k&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" },
+    { name: "Template Variado 1", url: "https://www.canva.com/design/DAFyrgGzU00/0tDNbDRUChixgcySibfn_w/view?utm_content=DAFyrgGzU00&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" },
+    { name: "Template Variado 2", url: "https://www.canva.com/design/DAFyluVaLaE/bN1k9qH2RjhLi0Nt-6qAbA/view?utm_content=DAFyluVaLaE&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" },
+    { name: "Post de Twitter", url: "https://www.canva.com/design/DAFxw2BGNnk/Go8ghgtq-TakeV8kT-2wZA/view?utm_content=DAFxw2BGNnk&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" },
+    { name: "Carrossel Grego Vermelho", url: "https://www.canva.com/design/DAFyGJ_pgR4/9wMWJqb28nKYVHsIZodQrw/view?utm_content=DAFyGJ_pgR4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" },
+    { name: "Elementos 3D", url: "https://www.canva.com/design/DAFxF3XMUvY/zUQPGA92UWh3Cm6WaVojqA/view?utm_content=DAFxF3XMUvY&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" },
+  ];
 
   const handleApplyCoupon = () => {
     if (couponCode.toUpperCase() === correctCoupon) {
@@ -134,20 +144,25 @@ export default function BonusPage() {
       </footer>
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="sm:max-w-md bg-card border-accent/50 text-white">
+        <DialogContent className="sm:max-w-lg bg-card border-accent/50 text-white">
           <DialogHeader className="items-center text-center">
             <div className="p-3 bg-green-500/20 rounded-full w-fit mb-4">
               <CheckCircle className="h-8 w-8 text-green-400" />
             </div>
             <DialogTitle className="text-2xl">Cupom Ativado com Sucesso!</DialogTitle>
             <DialogDescription className="text-gray-400 pt-2">
-              Seu acesso ao Pack de Design para Criativos foi liberado.
+              Seu acesso ao Pack de Design para Criativos foi liberado. Acesse os links abaixo:
             </DialogDescription>
           </DialogHeader>
-          <div className="py-4">
-              <Button asChild className="w-full bg-accent hover:bg-accent/80">
-                <Link href={accessLink}>Clique aqui para acessar seu Pack</Link>
+          <div className="py-4 space-y-3 max-h-60 overflow-y-auto pr-2">
+            {accessLinks.map((link) => (
+              <Button key={link.name} asChild className="w-full justify-start bg-primary hover:bg-primary/80">
+                <Link href={link.url} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="mr-3 h-4 w-4" />
+                  {link.name}
+                </Link>
               </Button>
+            ))}
           </div>
           <DialogFooter className="sm:justify-center">
             <DialogClose asChild>
