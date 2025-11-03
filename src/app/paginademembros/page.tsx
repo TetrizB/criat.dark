@@ -14,7 +14,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 const driveLinks = [
-  "https://drive.google.com/drive/folders/1HGzOM7miX1TM-lkt_8XH7mlt0h2rXRL",
+  "https://drive.google.com/drive/folders/1HGzOM7miX1TM1-lkt_8XH7mlt0h2rXRL",
   "https://drive.google.com/drive/folders/1H7LK1FbyfKuM7nDm3DKssogXot9Sf-gA",
   "https://drive.google.com/drive/folders/1EAlBRwQstPIwzKUtj0P2iUjJ8fp4jBDt",
   "https://drive.google.com/drive/folders/1QAsKc3icy_NNrSACwwHwX4nDg7rrxmrF",
@@ -33,7 +33,7 @@ export default function MembersPage() {
       imageUrl: "https://i.postimg.cc/N0sdcLfk/VIAGENS.png",
       imageHint: "luxury travel",
       hideOverlay: true,
-      action: () => setIsLinkDialogOpen(true), // This will open the dialog
+      linkUrl: "https://drive.google.com/drive/folders/1HGzOM7miX1TM1-lkt_8XH7mlt0h2rXRL",
     },
     {
       title: "Relógios e Carros",
@@ -41,7 +41,7 @@ export default function MembersPage() {
       imageUrl: "https://i.postimg.cc/yYhh8BGQ/VIAGENS-1.png",
       imageHint: "luxury watches cars",
       hideOverlay: true,
-      linkUrl: "https://drive.google.com/drive/folders/1H7LK1FbyfKuM7nDm3DKssogXot9Sf-gA",
+      action: () => setIsLinkDialogOpen(true), // This will open the dialog
     },
     {
       title: "Podcast Brasil",
@@ -57,7 +57,7 @@ export default function MembersPage() {
       imageUrl: "https://i.postimg.cc/zBB5VJpX/VIAGENS-4.png",
       imageHint: "viral memes",
       hideOverlay: true,
-      linkUrl: "https://drive.google.com/drive/folders/1HGzOM7miX1TM-lkt_8XH7mlt0h2rXRL",
+      linkUrl: "https://drive.google.com/drive/folders/1HGzOM7miX1TM1-lkt_8XH7mlt0h2rXRL",
     },
     {
       title: "Shape",
@@ -81,15 +81,7 @@ export default function MembersPage() {
       imageUrl: "https://i.postimg.cc/D0CgZ9c2/lanches-fit-de-nutri-7.png",
       imageHint: "viral recipes food",
       hideOverlay: true,
-      linkUrl: "https://drive.google.com/drive/folders/1HGzOM7miX1TM-lkt_8XH7mlt0h2rXRL",
-    },
-    {
-      title: "Curiosidades Rápidas",
-      description: "Fatos interessantes em vídeos curtos.",
-      imageUrl: "https://i.postimg.cc/W3sLqCqn/VIAGENS-7.png",
-      imageHint: "quick facts trivia",
-      hideOverlay: true,
-      linkUrl: "https://drive.google.com/drive/folders/1H7LK1FbyfKuM7nDm3DKssogXot9Sf-gA",
+      linkUrl: "https://drive.google.com/drive/folders/1HGzOM7miX1TM1-lkt_8XH7mlt0h2rXRL",
     },
   ];
 
