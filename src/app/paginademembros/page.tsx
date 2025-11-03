@@ -14,7 +14,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 const driveLinks = [
-  "https://drive.google.com/drive/folders/1HGzOM7miX1TM1-lkt_8XH7mlt0h2rXRL",
+  "https://drive.google.com/drive/folders/1HGzOM7miX1TM-lkt_8XH7mlt0h2rXRL",
   "https://drive.google.com/drive/folders/1H7LK1FbyfKuM7nDm3DKssogXot9Sf-gA",
   "https://drive.google.com/drive/folders/1EAlBRwQstPIwzKUtj0P2iUjJ8fp4jBDt",
   "https://drive.google.com/drive/folders/1QAsKc3icy_NNrSACwwHwX4nDg7rrxmrF",
@@ -76,12 +76,12 @@ export default function MembersPage() {
       linkUrl: "https://drive.google.com/drive/folders/1EAlBRwQstPIwzKUtj0P2iUjJ8fp4jBDt",
     },
      {
-      title: "Receitas Virais",
-      description: "Conteúdo delicioso e fácil de compartilhar.",
-      imageUrl: "https://i.postimg.cc/D0CgZ9c2/lanches-fit-de-nutri-7.png",
-      imageHint: "viral recipes food",
+      title: "Cortes Filmes e Séries",
+      description: "Cortes de filmes e séries populares.",
+      imageUrl: "https://i.postimg.cc/7P7J32zg/VIAGENS-7.png",
+      imageHint: "movie series clips",
       hideOverlay: true,
-      linkUrl: "https://drive.google.com/drive/folders/1HGzOM7miX1TM1-lkt_8XH7mlt0h2rXRL",
+      linkUrl: "#", // Placeholder
     },
   ];
 
