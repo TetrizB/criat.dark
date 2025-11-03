@@ -14,17 +14,24 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 const driveLinks = [
-  "https://drive.google.com/drive/folders/1HGzOM7miX1TM-lkt_8XH7mlt0h2rXRL",
+  "https://drive.google.com/drive/folders/1HGzOM7miX1TM1-lkt_8XH7mlt0h2rXRL",
   "https://drive.google.com/drive/folders/1H7LK1FbyfKuM7nDm3DKssogXot9Sf-gA",
   "https://drive.google.com/drive/folders/1EAlBRwQstPIwzKUtj0P2iUjJ8fp4jBDt",
   "https://drive.google.com/drive/folders/1QAsKc3icy_NNrSACwwHwX4nDg7rrxmrF",
   "https://drive.google.com/drive/folders/12j4SWIQKbsFtbOjL75YHxbNDyKmdscza"
 ];
 
+const movieLinks = [
+    "https://drive.google.com/drive/folders/1Lf-UtTuspT09K9_9SyBilsrJI11xp72X",
+    "https://drive.google.com/drive/folders/1p8ITT6kZtKzjh3TtNNZwU6kxgwCYU4yB",
+];
+
+
 export default function MembersPage() {
   const userName = "Aluno"; // Placeholder for user name
   const userAvatarUrl = "https://i.pravatar.cc/150?u=a042581f4e29026704d"; // Placeholder for user avatar
   const [isLinkDialogOpen, setIsLinkDialogOpen] = useState(false);
+  const [isMovieLinkDialogOpen, setIsMovieLinkDialogOpen] = useState(false);
 
   const videoBanks = [
     {
@@ -81,7 +88,7 @@ export default function MembersPage() {
       imageUrl: "https://i.postimg.cc/7P7J32zg/VIAGENS-7.png",
       imageHint: "movie series clips",
       hideOverlay: true,
-      linkUrl: "https://drive.google.com/drive/folders/1Lf-UtTuspT09K9_9SyBilsrJI11xp72X",
+      action: () => setIsMovieLinkDialogOpen(true),
     },
   ];
 
@@ -233,13 +240,39 @@ export default function MembersPage() {
       <Dialog open={isLinkDialogOpen} onOpenChange={setIsLinkDialogOpen}>
         <DialogContent className="sm:max-w-md bg-card border-accent/50 text-white">
             <DialogHeader>
-                <DialogTitle>Pacotes de Vídeos</DialogTitle>
+                <DialogTitle>Pacotes de Vídeos (Relógios e Carros)</DialogTitle>
                 <DialogDescription>
                     Acesse as pastas abaixo para baixar os vídeos.
                 </DialogDescription>
             </DialogHeader>
             <div className="space-y-2 py-4">
                 {driveLinks.map((link, index) => (
+                    <Button key={index} asChild className="w-full justify-start bg-primary hover:bg-primary/80">
+                        <Link href={link} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="mr-3 h-4 w-4" />
+                            Pacote de Vídeos {index + 1}
+                        </Link>
+                    </Button>
+                ))}
+            </div>
+            <DialogClose asChild>
+                <Button type="button" variant="secondary" className="w-full">
+                    Fechar
+                </Button>
+            </DialogClose>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={isMovieLinkDialogOpen} onOpenChange={setIsMovieLinkDialogOpen}>
+        <DialogContent className="sm:max-w-md bg-card border-accent/50 text-white">
+            <DialogHeader>
+                <DialogTitle>Pacotes de Filmes e Séries</DialogTitle>
+                <DialogDescription>
+                    Acesse as pastas abaixo para baixar os vídeos.
+                </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-2 py-4">
+                {movieLinks.map((link, index) => (
                     <Button key={index} asChild className="w-full justify-start bg-primary hover:bg-primary/80">
                         <Link href={link} target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="mr-3 h-4 w-4" />
