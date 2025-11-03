@@ -336,9 +336,11 @@ export default function HomePage() {
                         ))}
                       </ul>
                     </div>
-                    <Button size="lg" className="w-full bg-accent hover:bg-accent/80 text-lg font-bold h-14 mt-auto transition-transform duration-200 hover:scale-105 animate-pulse-subtle">
-                      <ShoppingCart className="mr-3" />
-                      QUERO ACESSO COMPLETO
+                    <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/80 text-lg font-bold h-14 mt-auto transition-transform duration-200 hover:scale-105 animate-pulse-subtle">
+                      <Link href="https://www.ggcheckout.com/checkout/v2/X4CDw0HGMXu9MnRrrqKN">
+                        <ShoppingCart className="mr-3" />
+                        QUERO ACESSO COMPLETO
+                      </Link>
                     </Button>
                   </CardContent>
                 </GradientCard>
@@ -469,10 +471,12 @@ export default function HomePage() {
                   <p>Essa é a realidade que o Digital Dark oferece. A decisão é sua: continuar sentindo que "mais uma semana foi perdida" ou tomar a atitude que pode te transformar no exemplo de superação da sua família.</p>
               </div>
               <div className="mt-12">
-                  <Button size="lg" className="w-full md:w-auto bg-green-500 hover:bg-green-600 text-xl font-bold h-16 px-12 shadow-lg shadow-green-500/30 transition-transform duration-300 hover:scale-105">
+                <Button asChild size="lg" className="w-full md:w-auto bg-green-500 hover:bg-green-600 text-xl font-bold h-16 px-12 shadow-lg shadow-green-500/30 transition-transform duration-300 hover:scale-105">
+                  <Link href="https://www.ggcheckout.com/checkout/v2/X4CDw0HGMXu9MnRrrqKN">
                     <CircleCheckBig className="mr-3" />
                     Sim, Eu Quero Começar Agora!
-                  </Button>
+                  </Link>
+                </Button>
                    <div className="text-center mt-6 flex justify-center items-center gap-2 text-gray-400 text-sm">
                       <Lock className="h-4 w-4"/>
                       <span>Pagamento seguro, acesso imediato e 7 dias de garantia.</span>
@@ -526,12 +530,16 @@ export default function HomePage() {
             <p className="text-sm text-gray-500 line-through mt-1">De R$297</p>
           </div>
           <div className="flex flex-col gap-3">
-            <Button size="lg" className="w-full bg-green-500 hover:bg-green-600 text-lg font-bold h-14 transition-transform duration-200 hover:scale-105">
-                SIM! EU QUERO A OFERTA!
+            <Button asChild size="lg" className="w-full bg-green-500 hover:bg-green-600 text-lg font-bold h-14 transition-transform duration-200 hover:scale-105">
+                <Link href="https://www.ggcheckout.com/checkout/v2/X4CDw0HGMXu9MnRrrqKN">
+                  SIM! EU QUERO A OFERTA!
+                </Link>
             </Button>
             <DialogClose asChild>
-              <Button type="button" variant="link" className="text-gray-400">
-                Não, obrigado. Quero apenas o Pacote Básico.
+              <Button asChild type="button" variant="link" className="text-gray-400">
+                <Link href="https://www.ggcheckout.com/checkout/v2/1xVgHsdtg2YbCp4gxSgn">
+                  Não, obrigado. Quero apenas o Pacote Básico.
+                </Link>
               </Button>
             </DialogClose>
           </div>
