@@ -73,7 +73,7 @@ export default function MembersPage() {
       imageUrl: "https://i.postimg.cc/j5rgFvnK/VIAGENS-5.png",
       imageHint: "powerful men success",
       hideOverlay: true,
-      linkUrl: "https://drive.google.com/drive/folders/1EAlBRwQstPIwzKUtj0P2iUjJ8fp4jBDt",
+      linkUrl: "https://drive.google.com/drive/folders/1YdNOjmAwmjT2ZXO8UjLpRQexKGFu5Zbe",
     },
      {
       title: "Cortes Filmes e Séries",
