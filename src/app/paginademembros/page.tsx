@@ -57,7 +57,7 @@ export default function MembersPage() {
       imageUrl: "https://i.postimg.cc/zBB5VJpX/VIAGENS-4.png",
       imageHint: "viral memes",
       hideOverlay: true,
-      linkUrl: "https://drive.google.com/drive/folders/1HGzOM7miX1TM1-lkt_8XH7mlt0h2rXRL",
+      linkUrl: "https://drive.google.com/drive/folders/17-lkb-3wZhcmjRYMyxyvVUuPmy-JZM24",
     },
     {
       title: "Shape",
