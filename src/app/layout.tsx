@@ -6,8 +6,8 @@ import ShaderBackground from '@/components/ui/shader-background';
 
 
 export const metadata: Metadata = {
-  title: 'Webgl Weaver',
-  description: 'An interactive, mesmerizing, animated shader background using WebGL for a visually engaging user interface.',
+  title: 'Criat.Dark - Seu negócio anônimo no Instagram',
+  description: 'Descubra o método para construir uma audiência e monetizar no Instagram sem precisar aparecer.',
 };
 
 export default function RootLayout({
