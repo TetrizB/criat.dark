@@ -81,7 +81,7 @@ export default function MembersPage() {
       imageUrl: "https://i.postimg.cc/7P7J32zg/VIAGENS-7.png",
       imageHint: "movie series clips",
       hideOverlay: true,
-      linkUrl: "#", // Placeholder
+      linkUrl: "https://drive.google.com/drive/folders/1Lf-UtTuspT09K9_9SyBilsrJI11xp72X",
     },
   ];
 
