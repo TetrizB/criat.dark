@@ -49,7 +49,7 @@ export default function MembersPage() {
       imageUrl: "https://i.postimg.cc/QdQjzYHB/VIAGENS-3.png",
       imageHint: "podcast brazil",
       hideOverlay: true,
-      linkUrl: "https://drive.google.com/drive/folders/1EAlBRwQstPIwzKUtj0P2iUjJ8fp4jBDt",
+      linkUrl: "https://drive.google.com/drive/folders/1lzgSenFbnC4WzoHoJq7ZuI9jcPwedgG-",
     },
     {
       title: "Memes",
