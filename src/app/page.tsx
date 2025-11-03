@@ -522,7 +522,7 @@ export default function HomePage() {
             </DialogDescription>
           </DialogHeader>
           <div className="my-8">
-            <p className="text-5xl font-bold text-accent">Apenas R$27,00</p>
+            <p className="text-5xl font-bold text-accent">Apenas R$37,00</p>
             <p className="text-sm text-gray-500 line-through mt-1">De R$297</p>
           </div>
           <div className="flex flex-col gap-3">
