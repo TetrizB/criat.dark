@@ -47,6 +47,14 @@ export default function RootLayout({
           async
           defer
         ></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.pixelId = "6880317ef7b478570ccb782d";
+          var a = document.createElement("script");
+          a.setAttribute("async", "");
+          a.setAttribute("defer", "");
+          a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+          document.head.appendChild(a);
+        `}} />
       </head>
       <body className="font-body antialiased">
         <ShaderBackground />
