@@ -197,6 +197,7 @@ export default function HomePage() {
                       height={400}
                       className="rounded-xl shadow-2xl object-cover"
                       data-ai-hint="sales growth chart"
+                      priority
                   />
                   <div className="w-full max-w-sm">
                     <GradientCard>
@@ -438,8 +439,7 @@ export default function HomePage() {
                       <CardContent className="pt-8 text-center">
                           {testimonial3Avatar && <Image src={testimonial3Avatar.imageUrl} alt="Avatar de aluno" width={80} height={80} className="rounded-full mx-auto mb-4 border-2 border-accent/50" data-ai-hint={testimonial3Avatar.imageHint} />}
                           <p className="font-bold text-lg">Fernanda L.</p>
-                          <p className="text-sm text-gray-400 mb-4">Renda extra que virou principal</p>
-                          <p className="italic text-gray-300">"Comecei para ter uma renda extra, hoje já ganho mais do que no meu antigo emprego. Fechei o mês com R$22.500."</p>
+                          <p className="text-sm text-gray-400 mb-4">Renda extra que virou principal</p>                          <p className="italic text-gray-300">"Comecei para ter uma renda extra, hoje já ganho mais do que no meu antigo emprego. Fechei o mês com R$22.500."</p>
                           <p className="mt-4 text-3xl font-bold text-green-400">+ R$22.500,00</p>
                       </CardContent>
                   </GradientCard>
