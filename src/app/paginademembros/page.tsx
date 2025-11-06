@@ -6,12 +6,11 @@ import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { modules } from '@/lib/content';
 import { cn } from '@/lib/utils';
-import { PlayCircle, Search, Settings, Download, Gift, ArrowRight, ExternalLink, X } from 'lucide-react';
+import { PlayCircle, Search, Settings, Download, Gift, ArrowRight, ExternalLink, X, AlertTriangle } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogClose } from '@/components/ui/dialog';
-import { ScrollArea } from '@/components/ui/scroll-area';
 
 const driveLinks = [
   "https://drive.google.com/drive/folders/1HhhL8Q77y5ryfI4gztkDUy0GQiZuJBUP",
@@ -40,6 +39,7 @@ export default function MembersPage() {
   const [isLinkDialogOpen, setIsLinkDialogOpen] = useState(false);
   const [isMovieLinkDialogOpen, setIsMovieLinkDialogOpen] = useState(false);
   const [isPabloMarcalDialogOpen, setIsPabloMarcalDialogOpen] = useState(false);
+  const [isMaintenanceDialogOpen, setIsMaintenanceDialogOpen] = useState(false);
 
   const videoBanks = [
     {
@@ -240,7 +240,8 @@ export default function MembersPage() {
               {modules.map((module, index) => (
                 <div
                   key={index}
-                  className="group relative rounded-xl border border-border/30 bg-card/50 overflow-hidden shadow-lg hover:shadow-accent/20 transition-shadow duration-300"
+                  onClick={() => setIsMaintenanceDialogOpen(true)}
+                  className="cursor-pointer group relative rounded-xl border border-border/30 bg-card/50 overflow-hidden shadow-lg hover:shadow-accent/20 transition-shadow duration-300"
                 >
                   <div className="relative p-6 flex flex-col h-full">
                     <div className="mb-4 p-3 bg-primary rounded-full w-fit">
@@ -269,6 +270,27 @@ export default function MembersPage() {
           </section>
         </main>
       </div>
+
+      {/* Dialog for Maintenance */}
+      <Dialog open={isMaintenanceDialogOpen} onOpenChange={setIsMaintenanceDialogOpen}>
+        <DialogContent className="sm:max-w-md bg-card border-accent/50 text-white">
+          <DialogHeader className="items-center text-center">
+            <div className="p-3 bg-yellow-500/20 rounded-full w-fit mb-4">
+              <AlertTriangle className="h-8 w-8 text-yellow-400" />
+            </div>
+            <DialogTitle className="text-2xl">Módulo em Breve!</DialogTitle>
+            <DialogDescription className="text-gray-400 pt-2">
+              Estamos trabalhando para finalizar este conteúdo. Fique tranquilo, você será notificado assim que ele estiver disponível!
+            </DialogDescription>
+          </DialogHeader>
+          <DialogClose asChild>
+            <Button type="button" variant="secondary" className="w-full mt-4">
+              Entendido
+            </Button>
+          </DialogClose>
+        </DialogContent>
+      </Dialog>
+
       <Dialog open={isLinkDialogOpen} onOpenChange={setIsLinkDialogOpen}>
         <DialogContent className="sm:max-w-md bg-card border-accent/50 text-white">
             <DialogHeader>
