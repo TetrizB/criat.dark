@@ -26,12 +26,20 @@ const movieLinks = [
     "https://drive.google.com/drive/folders/1p8ITT6kZtKzjh3TtNNZwU6kxgwCYU4yB",
 ];
 
+const pabloMarcalLinks = [
+    "https://drive.google.com/drive/folders/1RqNvEhelljZYgSe3VLAvbgv2rCDekD8s",
+    "https://drive.google.com/drive/folders/11PaJNc67qqvK-HkIEx2tmORkcGw3SA9Q",
+    "https://drive.google.com/drive/folders/1TP0Ae-xZNnt3jvQ91pMJ4JU_s9iwb6GQ",
+    "https://drive.google.com/drive/folders/1iSHwp0fPW7yF8np_M-lETcuPHblxH2zq"
+];
+
 
 export default function MembersPage() {
   const userName = "Aluno"; // Placeholder for user name
   const userAvatarUrl = "https://i.pravatar.cc/150?u=a042581f4e29026704d"; // Placeholder for user avatar
   const [isLinkDialogOpen, setIsLinkDialogOpen] = useState(false);
   const [isMovieLinkDialogOpen, setIsMovieLinkDialogOpen] = useState(false);
+  const [isPabloMarcalDialogOpen, setIsPabloMarcalDialogOpen] = useState(false);
 
   const videoBanks = [
     {
@@ -89,6 +97,30 @@ export default function MembersPage() {
       imageHint: "movie series clips",
       hideOverlay: true,
       action: () => setIsMovieLinkDialogOpen(true),
+    },
+    {
+      title: "Cortes Pablo Marçal",
+      description: "Cortes de Pablo Marçal.",
+      imageUrl: "https://i.postimg.cc/KzYJzT5J/placeholder-pablo.png",
+      imageHint: "man speaking podcast",
+      hideOverlay: true,
+      action: () => setIsPabloMarcalDialogOpen(true),
+    },
+    {
+      title: "Cortes Ruyter",
+      description: "Cortes de Ruyter.",
+      imageUrl: "https://i.postimg.cc/W3hBwB3z/placeholder-ruyter.png",
+      imageHint: "man podcast",
+      hideOverlay: true,
+      linkUrl: "https://drive.google.com/drive/folders/1-BzVt5a78RyP3q_MaJxGYmLpYxkvA6Rs",
+    },
+    {
+      title: "Cortes Gringos e Diversos",
+      description: "Cortes de podcasts internacionais.",
+      imageUrl: "https://i.postimg.cc/bNqDXJcQ/placeholder-gringo.png",
+      imageHint: "podcast international",
+      hideOverlay: true,
+      linkUrl: "https://drive.google.com/drive/folders/11nHOpjzNHFGOUGdpQ8q-Tk1nNydnEBFy",
     },
   ];
 
@@ -273,6 +305,32 @@ export default function MembersPage() {
             </DialogHeader>
             <div className="space-y-2 py-4">
                 {movieLinks.map((link, index) => (
+                    <Button key={index} asChild className="w-full justify-start bg-primary hover:bg-primary/80">
+                        <Link href={link} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="mr-3 h-4 w-4" />
+                            Pacote de Vídeos {index + 1}
+                        </Link>
+                    </Button>
+                ))}
+            </div>
+            <DialogClose asChild>
+                <Button type="button" variant="secondary" className="w-full">
+                    Fechar
+                </Button>
+            </DialogClose>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={isPabloMarcalDialogOpen} onOpenChange={setIsPabloMarcalDialogOpen}>
+        <DialogContent className="sm:max-w-md bg-card border-accent/50 text-white">
+            <DialogHeader>
+                <DialogTitle>Pacotes de Cortes (Pablo Marçal)</DialogTitle>
+                <DialogDescription>
+                    Acesse as pastas abaixo para baixar os vídeos.
+                </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-2 py-4">
+                {pabloMarcalLinks.map((link, index) => (
                     <Button key={index} asChild className="w-full justify-start bg-primary hover:bg-primary/80">
                         <Link href={link} target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="mr-3 h-4 w-4" />
