@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -23,6 +22,8 @@ import { ResultsCarousel } from '@/components/ui/results-carousel';
 import { VideoCarousel } from '@/components/ui/video-carousel';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { DialogClose } from '@radix-ui/react-dialog';
+import VslPlayer from '@/components/ui/vsl-player';
+import VslScript from '@/components/ui/vsl-script';
 
 const getPlaceholderImage = (id: string) => {
   return PlaceHolderImages.find((img) => img.id === id);
@@ -190,15 +191,8 @@ export default function HomePage() {
                   Descubra o método usado por perfis anônimos para construir uma audiência e monetizar sem precisar aparecer.
               </p>
               <div className="mt-10 flex flex-col items-center gap-8">
-                  <Image 
-                      src="https://i.postimg.cc/j2WHDT5Y/Copia-de-Copia-de-Copia-de-Post-Qroz-4-8-25-1759537252059-Bz-S2s-Ni-W.png"
-                      alt="Gráfico de vendas mostrando crescimento exponencial."
-                      width={600}
-                      height={400}
-                      className="rounded-xl shadow-2xl object-cover"
-                      data-ai-hint="sales growth chart"
-                      priority
-                  />
+                  <VslPlayer />
+                  <VslScript />
                   <div className="w-full max-w-sm">
                     <GradientCard>
                       <div className="p-4 flex items-center gap-4">
