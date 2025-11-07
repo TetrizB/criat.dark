@@ -35,16 +35,12 @@ const testimonial3Avatar = getPlaceholderImage('testimonial-3-avatar');
 
 
 export default function HomePage() {
-  const [dateText, setDateText] = React.useState('OFERTA POR TEMPO LIMITADO');
+  const [dateText, setDateText] = React.useState('OFERTA DE BLACK FRIDAY EXPIRA EM');
   const [isUpsellOpen, setIsUpsellOpen] = React.useState(false);
 
   React.useEffect(() => {
-    const today = new Date();
-    const formattedDate = today.toLocaleDateString('pt-BR', {
-      day: 'numeric',
-      month: 'long',
-    });
-    setDateText(`As vagas se encerram hoje: ${formattedDate}`);
+    // This could be a countdown timer in a real scenario
+    setDateText(`OFERTA DE BLACK FRIDAY TERMINA HOJE!`);
   }, []);
 
   const navLinks = [
@@ -147,7 +143,7 @@ export default function HomePage() {
       <div className="relative min-h-screen w-full text-white overflow-x-hidden">
         {/* Header */}
         <header className="z-20 fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-md border-b border-border/50">
-          <div className="bg-red-600 text-center py-2 text-sm font-bold flex items-center justify-center shadow-lg">
+          <div className="bg-black text-center py-2 text-sm font-bold flex items-center justify-center shadow-lg text-yellow-400">
               <Flame className="mr-2 h-4 w-4 animate-pulse" /> {dateText}
           </div>
           <nav className="container mx-auto flex items-center justify-between p-4">
@@ -278,7 +274,7 @@ export default function HomePage() {
 
           {/* 3. DESEJO (D) - Detalhamento da Oferta */}
           <section id="ofertas" className="z-10 mt-32 w-full max-w-6xl">
-             <h2 className="text-center text-4xl sm:text-5xl font-bold tracking-tighter mb-4">O que você vai receber?</h2>
+             <h2 className="text-center text-4xl sm:text-5xl font-bold tracking-tighter mb-4">ÚNICA OFERTA <span className="text-yellow-400">BLACK FRIDAY</span></h2>
               <p className="text-center text-gray-300 mb-16 text-lg">Tudo que você precisa para sair do zero e faturar alto, no anonimato.</p>
              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 {/* Offer 1: Super Pack */}
@@ -311,16 +307,24 @@ export default function HomePage() {
                 </GradientCard>
 
                 {/* Offer 2: Acesso Completo */}
-                <GradientCard className="flex flex-col border-2 border-accent shadow-2xl shadow-accent/20">
+                <GradientCard className="flex flex-col border-2 border-yellow-400 shadow-2xl shadow-yellow-400/20">
+                    <Image 
+                        src="https://i.postimg.cc/bJhV07bz/Design-sem-nome-3.png"
+                        alt="Selo Black Friday"
+                        width={140}
+                        height={140}
+                        className="absolute -top-16 -right-8 z-10"
+                        data-ai-hint="black friday badge"
+                    />
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white px-6 py-1.5 rounded-full text-sm font-bold shadow-lg">
                     MAIS VENDIDO
                   </div>
                   <CardHeader className="pt-8">
-                    <CardTitle className="text-3xl font-bold tracking-tight">ACESSO COMPLETO</CardTitle>
+                    <CardTitle className="text-3xl font-bold tracking-tight">BLACK FRIDAY COMPLETO</CardTitle>
                   </CardHeader>
                   <CardContent className="flex flex-col flex-grow p-6">
                     <div className="flex-grow">
-                      <p className="text-5xl font-bold mb-2">R$37<span className="text-3xl font-medium align-top">,00</span></p>
+                      <p className="text-5xl font-bold mb-2 text-yellow-400">R$37<span className="text-3xl font-medium align-top">,00</span></p>
                       <p className="text-sm text-gray-400 mb-8">ou 8x de R$5,38</p>
                       <ul className="space-y-4 mb-8">
                         {featuresCompleto.map((feature, index) => (
@@ -331,10 +335,10 @@ export default function HomePage() {
                         ))}
                       </ul>
                     </div>
-                    <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/80 text-lg font-bold h-14 mt-auto transition-transform duration-200 hover:scale-105 animate-pulse-subtle">
+                    <Button asChild size="lg" className="w-full bg-yellow-500 hover:bg-yellow-600 text-black text-lg font-bold h-14 mt-auto transition-transform duration-200 hover:scale-105 animate-pulse-subtle">
                       <Link href="https://www.ggcheckout.com/checkout/v2/X4CDw0HGMXu9MnRrrqKN">
                         <ShoppingCart className="mr-3" />
-                        QUERO ACESSO COMPLETO
+                        QUERO ACESSO BLACK FRIDAY
                       </Link>
                     </Button>
                   </CardContent>
