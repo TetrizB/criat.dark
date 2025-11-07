@@ -11,7 +11,7 @@ const VslScript = () => {
       dangerouslySetInnerHTML={{
         __html: `
           var s=document.createElement("script");
-          s.src="https://scripts.converteai.net/1d6c7e9a-980e-4cd9-add6-571246eddeec/players/690c3cff6489e82b7da1d7c3/v4/player.js",
+          s.src="https://scripts.converteai.net/1d6c7e9a-980e-4cd9-add6-571246eddeec/players/690d6cc852aad814cc4b8e94/v4/player.js",
           s.async=!0,
           document.head.appendChild(s);
         `,

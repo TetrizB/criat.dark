@@ -18,7 +18,7 @@ declare global {
 const VslPlayer = () => {
   return (
     <div className='w-full max-w-4xl mx-auto'>
-        <vturb-smartplayer id="vid-690c3cff6489e82b7da1d7c3"></vturb-smartplayer>
+        <vturb-smartplayer id="vid-690d6cc852aad814cc4b8e94"></vturb-smartplayer>
     </div>
   );
 };
