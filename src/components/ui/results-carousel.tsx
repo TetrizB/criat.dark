@@ -33,6 +33,36 @@ const studentResults = [
     alt: "Resultado de aluno 4",
     hint: "testimonial message"
   },
+  {
+    src: "https://i.postimg.cc/858g00h6/IMG-8713.jpg",
+    alt: "Resultado de aluno 5",
+    hint: "testimonial screenshot"
+  },
+  {
+    src: "https://i.postimg.cc/JhHWKLBB/IMG-8714.jpg",
+    alt: "Resultado de aluno 6",
+    hint: "sales chart"
+  },
+  {
+    src: "https://i.postimg.cc/G20n55kk/IMG-8715.jpg",
+    alt: "Resultado de aluno 7",
+    hint: "sales notification"
+  },
+  {
+    src: "https://i.postimg.cc/zBmYccnC/IMG-8716.jpg",
+    alt: "Resultado de aluno 8",
+    hint: "earnings graph"
+  },
+  {
+    src: "https://i.postimg.cc/PxGnRRmM/IMG-8720.jpg",
+    alt: "Resultado de aluno 9",
+    hint: "sales data"
+  },
+  {
+    src: "https://i.postimg.cc/RFrxDDcN/IMG-8721.jpg",
+    alt: "Resultado de aluno 10",
+    hint: "testimonial message"
+  }
 ];
 
 export function ResultsCarousel() {
