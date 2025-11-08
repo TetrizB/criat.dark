@@ -101,7 +101,7 @@ export default function MembersPage() {
     {
       title: "Cortes Pablo Marçal",
       description: "Cortes de Pablo Marçal.",
-      imageUrl: "https://i.postimg.cc/KzYJzT5J/placeholder-pablo.png",
+      imageUrl: "https://i.postimg.cc/hP6mQZ2J/10.png",
       imageHint: "man speaking podcast",
       hideOverlay: true,
       action: () => setIsPabloMarcalDialogOpen(true),
@@ -109,7 +109,7 @@ export default function MembersPage() {
     {
       title: "Cortes Ruyter",
       description: "Cortes de Ruyter.",
-      imageUrl: "https://i.postimg.cc/W3hBwB3z/placeholder-ruyter.png",
+      imageUrl: "https://i.postimg.cc/4NS6bxxp/8.png",
       imageHint: "man podcast",
       hideOverlay: true,
       linkUrl: "https://drive.google.com/drive/folders/1-BzVt5a78RyP3q_MaJxGYmLpYxkvA6Rs",
@@ -117,7 +117,7 @@ export default function MembersPage() {
     {
       title: "Cortes Gringos e Diversos",
       description: "Cortes de podcasts internacionais.",
-      imageUrl: "https://i.postimg.cc/bNqDXJcQ/placeholder-gringo.png",
+      imageUrl: "https://i.postimg.cc/sDqWGHT1/9.png",
       imageHint: "podcast international",
       hideOverlay: true,
       linkUrl: "https://drive.google.com/drive/folders/11nHOpjzNHFGOUGdpQ8q-Tk1nNydnEBFy",
