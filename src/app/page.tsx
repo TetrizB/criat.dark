@@ -284,7 +284,10 @@ export default function HomePage() {
                   </CardHeader>
                   <CardContent className="flex flex-col flex-grow p-6">
                     <div className="flex-grow">
-                      <p className="text-5xl font-bold mb-2">R$19<span className="text-3xl font-medium align-top">,97</span></p>
+                        <div className="flex items-baseline gap-4 mb-2">
+                            <p className="text-5xl font-bold">R$19<span className="text-3xl font-medium align-top">,97</span></p>
+                            <p className="text-xl font-medium text-gray-500 line-through">R$69,90</p>
+                        </div>
                       <p className="text-sm text-gray-400 mb-8">ou 4x de R$5,53</p>
                       <ul className="space-y-4 mb-8">
                         {featuresSuperPack.map((feature, index) => (
@@ -324,7 +327,10 @@ export default function HomePage() {
                   </CardHeader>
                   <CardContent className="flex flex-col flex-grow p-6">
                     <div className="flex-grow">
-                      <p className="text-5xl font-bold mb-2 text-yellow-400">R$37<span className="text-3xl font-medium align-top">,00</span></p>
+                        <div className="flex items-baseline gap-4 mb-2">
+                            <p className="text-5xl font-bold text-yellow-400">R$37<span className="text-3xl font-medium align-top">,00</span></p>
+                            <p className="text-xl font-medium text-gray-500 line-through">R$129,90</p>
+                        </div>
                       <p className="text-sm text-gray-400 mb-8">ou 8x de R$5,38</p>
                       <ul className="space-y-4 mb-8">
                         {featuresCompleto.map((feature, index) => (
@@ -546,5 +552,3 @@ export default function HomePage() {
     </>
   );
 }
-
-    
