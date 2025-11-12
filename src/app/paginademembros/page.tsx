@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { modules } from '@/lib/content';
 import { cn } from '@/lib/utils';
-import { PlayCircle, Search, Settings, Download, Gift, ArrowRight, ExternalLink, X, AlertTriangle, Key, ShoppingCart } from 'lucide-react';
+import { PlayCircle, Search, Settings, Download, Gift, ArrowRight, ExternalLink, AlertTriangle, Key, ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -131,7 +131,7 @@ export default function MembersPage() {
         {/* Header */}
         <header className="z-20 sticky top-0 bg-background/80 backdrop-blur-md border-b border-border/50">
           <div className="container mx-auto flex items-center justify-between p-4">
-            <div className="text-2xl font-bold tracking-tighter">Criat.Dark</div>
+            <Link href="/" className="text-2xl font-bold tracking-tighter">Criat.Dark</Link>
             <div className="flex items-center gap-4">
               <Button variant="ghost" size="icon">
                 <Search className="h-5 w-5" />
@@ -149,16 +149,19 @@ export default function MembersPage() {
 
         {/* Main Content */}
         <main className="container mx-auto px-4 py-12">
-          <section className="mb-12">
+          <section className="mb-12 relative w-full h-64 sm:h-80 rounded-lg overflow-hidden">
             <Image
               src="https://i.postimg.cc/nh6q3g8G/lanches-fit-de-nutri-8.png"
               alt="Banner da Área de Membros"
-              width={1200}
-              height={400}
-              className="rounded-lg object-cover w-full"
+              layout="fill"
+              className="object-cover"
               data-ai-hint="membership area banner"
               priority
             />
+            <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center p-4">
+              <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tighter text-white">Bem-vindo(a), {userName}!</h1>
+              <p className="mt-4 text-lg text-gray-200 max-w-2xl">Este é o seu QG. Explore os módulos, baixe os recursos e comece a construir seu império anônimo.</p>
+            </div>
           </section>
 
           {/* Bonus Section */}
@@ -174,47 +177,19 @@ export default function MembersPage() {
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {/* CapCut Pro Card */}
-                  <div onClick={() => setIsCapcutDialogOpen(true)} className="cursor-pointer">
-                      <div className="group relative rounded-xl overflow-hidden border border-amber-400/30 shadow-lg h-full shadow-amber-500/10">
-                          <Image 
-                              src="https://i.postimg.cc/HLY6qnMx/Copia_de_Elementos_para_Design_1.png"
-                              alt="Capcut Pro Vitalício"
-                              width={600}
-                              height={400}
-                              className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
-                              data-ai-hint="video editing software"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-                          <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                              <h3 className="text-xl font-bold text-white mb-1">CapCut Pro Vitalício</h3>
-                              <p className="text-gray-300 text-sm mb-4">O melhor para edição de vídeos, gratuito.</p>
-                              <div className="flex items-baseline gap-2 mb-4">
-                                <p className="text-2xl font-bold text-amber-400">R$19,90</p>
-                                <p className="text-md font-medium text-gray-500 line-through">R$39,90</p>
-                              </div>
-                              <Button className="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold transition-transform duration-200 group-hover:scale-105">
-                                  <ShoppingCart className="mr-2 h-4 w-4" />
-                                  Acessar Oferta
-                              </Button>
-                          </div>
-                      </div>
-                  </div>
-
-                   {/* Other Bonuses Card */}
+                  {/* Other Bonuses Card */}
                   <Link href="/bonus" className="block group">
                       <div className="relative rounded-xl overflow-hidden border border-border/30 shadow-lg h-full bg-card/80 flex flex-col items-center justify-center text-center p-6 hover:border-accent/50 transition-all duration-300">
                           <div className="mb-4 p-4 bg-primary rounded-full border border-dashed border-accent/50">
                             <Gift className="h-10 w-10 text-accent" />
                           </div>
-                          <h3 className="text-xl font-bold text-white">Outros Bônus e Ferramentas</h3>
-                          <p className="text-gray-400 mt-2 mb-4">Acesse o pack de design, biblioteca de recursos e muito mais.</p>
+                          <h3 className="text-xl font-bold text-white">Ofertas e Ferramentas</h3>
+                          <p className="text-gray-400 mt-2 mb-4">Acesse o Capcut Pro, pack de design, biblioteca de recursos e muito mais.</p>
                           <Button variant="outline" className="mt-auto">
-                              Ver Todos os Bônus <ArrowRight className="ml-2 h-4 w-4" />
+                              Ver Todas as Ofertas <ArrowRight className="ml-2 h-4 w-4" />
                           </Button>
                       </div>
                   </Link>
-
               </div>
           </section>
           
@@ -306,38 +281,6 @@ export default function MembersPage() {
           </section>
         </main>
       </div>
-
-      {/* Dialog for CapCut Pro */}
-      <Dialog open={isCapcutDialogOpen} onOpenChange={setIsCapcutDialogOpen}>
-        <DialogContent className="sm:max-w-md bg-card border-amber-400/50 text-white">
-            <DialogHeader>
-                <DialogTitle>CapCut Pro Vitalício</DialogTitle>
-                <DialogDescription>
-                    Acesse o link para adquirir o produto. Use a senha abaixo após a compra.
-                </DialogDescription>
-            </DialogHeader>
-            <div className="space-y-4 py-4">
-                <Button asChild className="w-full justify-start bg-primary hover:bg-primary/80">
-                    <Link href="https://drive.google.com/drive/folders/16B-LixsrbgKQ21rPvHEd6FXQ5ZLe4JmC?usp=drive_link" target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-3 h-4 w-4" />
-                        Link para o Produto
-                    </Link>
-                </Button>
-                 <div className="flex items-center gap-3 rounded-md border border-dashed border-amber-400/50 bg-primary/30 p-3">
-                    <Key className="h-5 w-5 text-amber-400 flex-shrink-0" />
-                    <div>
-                        <p className="text-sm text-gray-300">Senha de Acesso:</p>
-                        <p className="font-mono text-lg font-bold text-amber-400">CORTESCAPCUT</p>
-                    </div>
-                </div>
-            </div>
-            <DialogClose asChild>
-                <Button type="button" variant="secondary" className="w-full">
-                    Fechar
-                </Button>
-            </DialogClose>
-        </DialogContent>
-      </Dialog>
 
       {/* Dialog for Maintenance */}
       <Dialog open={isMaintenanceDialogOpen} onOpenChange={setIsMaintenanceDialogOpen}>

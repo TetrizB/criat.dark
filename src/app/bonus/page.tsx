@@ -2,9 +2,9 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { Gift, Sparkles, ArrowRight, CheckCircle, ExternalLink, ShoppingCart, Key } from 'lucide-react';
+import { Gift, Sparkles, ArrowRight, CheckCircle, ExternalLink, ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -137,106 +137,119 @@ const BonusCard = ({ bonus }: { bonus: Bonus }) => {
       if (bonus.correctCoupon && couponCode.toUpperCase() === bonus.correctCoupon.toUpperCase()) {
         setIsDialogOpen(true);
         setError(null);
-      } else {
+      } else if (bonus.productUrl && !bonus.correctCoupon) {
+        setIsDialogOpen(true);
+        setError(null);
+      }
+      else {
         setError("Código de cupom inválido.");
       }
     };
+
+    const handleAccess = () => {
+      if(bonus.isSpecialOffer) {
+        if (bonus.correctCoupon && couponCode.toUpperCase() === bonus.correctCoupon.toUpperCase()){
+          setIsDialogOpen(true);
+          setError(null);
+        } else {
+          setError("Senha de acesso inválida.");
+        }
+      } else {
+        handleApplyCoupon();
+      }
+    }
   
     return (
       <>
         <div className="relative group">
             <div className={`absolute -inset-0.5 bg-gradient-to-r ${bonus.isSpecialOffer ? 'from-amber-500 to-yellow-400' : 'from-accent to-blue-500'} rounded-xl blur opacity-20 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 animate-tilt`}></div>
-            <Card className="relative bg-card/80 backdrop-blur-sm border-border/30 overflow-hidden">
-                <div className="grid md:grid-cols-2">
-                    <div className="p-8 flex flex-col justify-between">
-                        <div>
-                            <CardHeader className="p-0 mb-4">
-                                <p className={`text-sm font-medium ${bonus.isSpecialOffer ? 'text-amber-400' : 'text-accent'} mb-1`}>{bonus.subtitle}</p>
-                                <CardTitle className="text-3xl tracking-tight">{bonus.title}</CardTitle>
-                            </CardHeader>
-                            <CardDescription className="text-base text-gray-400 leading-relaxed">
-                                {bonus.description}
-                            </CardDescription>
-                        </div>
+            <Card className="relative bg-card/80 backdrop-blur-sm border-border/30 overflow-hidden h-full flex flex-col">
+                <div className="relative min-h-[250px]">
+                    <Image
+                        src={bonus.imageUrl}
+                        alt={bonus.title}
+                        fill
+                        className="object-cover"
+                        data-ai-hint={bonus.imageHint}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent"></div>
+                </div>
+                
+                <div className="p-6 flex flex-col flex-grow">
+                    <div>
+                        <p className={`text-sm font-medium ${bonus.isSpecialOffer ? 'text-amber-400' : 'text-accent'} mb-1`}>{bonus.subtitle}</p>
+                        <h3 className="text-2xl font-bold tracking-tight">{bonus.title}</h3>
+                        <p className="text-base text-gray-400 leading-relaxed mt-2">
+                            {bonus.description}
+                        </p>
+                    </div>
 
-                        <div className="mt-8">
-                            {bonus.isSpecialOffer ? (
-                                <>
-                                    {!showAccessInput ? (
-                                        <>
-                                            <div className="flex items-baseline gap-2 mb-4">
-                                                <p className="text-4xl font-bold text-amber-400">{bonus.price}</p>
-                                                <p className="text-lg font-medium text-gray-500 line-through">{bonus.originalPrice}</p>
-                                            </div>
-                                            <Button asChild size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-black text-lg font-bold h-14 transition-transform duration-200 hover:scale-105">
-                                                <Link href={bonus.checkoutUrl}>
-                                                    <ShoppingCart className="mr-3 h-5 w-5" />
-                                                    Quero esta Oferta
-                                                </Link>
-                                            </Button>
-                                            <p className="text-xs text-center text-gray-500 mt-2">Pagamento único. Acesso vitalício.</p>
-                                            <Button variant="link" className="text-gray-400 w-full mt-2" onClick={() => setShowAccessInput(true)}>
-                                                Já adquiriu? Clique aqui para acessar.
-                                            </Button>
-                                        </>
-                                    ) : (
-                                        <div>
-                                            <label htmlFor={`access-coupon-${bonus.id}`} className="text-xs font-bold text-gray-400 uppercase tracking-wider">Insira a senha para acessar</label>
-                                            <div className="flex items-center gap-2 mt-2">
-                                                <Input
-                                                    id={`access-coupon-${bonus.id}`}
-                                                    placeholder="Sua senha de acesso"
-                                                    className="bg-primary/50 border-border"
-                                                    value={couponCode}
-                                                    onChange={(e) => setCouponCode(e.target.value)}
-                                                />
-                                                <Button variant="secondary" className="flex-shrink-0" onClick={handleApplyCoupon}>Acessar</Button>
-                                            </div>
-                                            {error && <p className="text-red-500 text-xs mt-2">{error}</p>}
-                                            <Button variant="link" size="sm" className="text-gray-500 w-full mt-1" onClick={() => {setShowAccessInput(false); setError(null);}}>
-                                                Voltar para a compra
-                                            </Button>
+                    <div className="mt-auto pt-6">
+                        {bonus.isSpecialOffer ? (
+                            <>
+                                {!showAccessInput ? (
+                                    <>
+                                        <div className="flex items-baseline gap-2 mb-4">
+                                            <p className="text-4xl font-bold text-amber-400">{bonus.price}</p>
+                                            {bonus.originalPrice && <p className="text-lg font-medium text-gray-500 line-through">{bonus.originalPrice}</p>}
                                         </div>
-                                    )}
-                                </>
-                            ) : (
-                                <>
-                                    <div className="mb-6">
-                                        <label htmlFor={`coupon-${bonus.id}`} className="text-xs font-bold text-gray-400 uppercase tracking-wider">Tem um cupom?</label>
+                                        <Button asChild size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-black text-lg font-bold h-12 transition-transform duration-200 hover:scale-105">
+                                            <Link href={bonus.checkoutUrl}>
+                                                <ShoppingCart className="mr-3 h-5 w-5" />
+                                                Quero esta Oferta
+                                            </Link>
+                                        </Button>
+                                        <p className="text-xs text-center text-gray-500 mt-2">Pagamento único. Acesso vitalício.</p>
+                                        <Button variant="link" className="text-gray-400 w-full mt-1" onClick={() => setShowAccessInput(true)}>
+                                            Já adquiriu? Acesse aqui.
+                                        </Button>
+                                    </>
+                                ) : (
+                                    <div>
+                                        <label htmlFor={`access-coupon-${bonus.id}`} className="text-xs font-bold text-gray-400 uppercase tracking-wider">Insira a senha para acessar</label>
                                         <div className="flex items-center gap-2 mt-2">
                                             <Input
-                                                id={`coupon-${bonus.id}`}
-                                                placeholder="Seu código aqui"
+                                                id={`access-coupon-${bonus.id}`}
+                                                placeholder="Sua senha de acesso"
                                                 className="bg-primary/50 border-border"
                                                 value={couponCode}
                                                 onChange={(e) => setCouponCode(e.target.value)}
                                             />
-                                            <Button variant="secondary" className="flex-shrink-0" onClick={handleApplyCoupon}>Aplicar</Button>
+                                            <Button variant="secondary" className="flex-shrink-0" onClick={handleAccess}>Acessar</Button>
                                         </div>
                                         {error && <p className="text-red-500 text-xs mt-2">{error}</p>}
+                                        <Button variant="link" size="sm" className="text-gray-500 w-full mt-1" onClick={() => {setShowAccessInput(false); setError(null);}}>
+                                            Voltar para a compra
+                                        </Button>
                                     </div>
-                                    
-                                    <Button size="lg" className="w-full bg-accent hover:bg-accent/80 text-lg font-bold h-14 transition-transform duration-200 hover:scale-105">
-                                      <Link href={bonus.checkoutUrl} className="flex items-center">
-                                        <Sparkles className="mr-3 h-5 w-5" />
-                                        Acesso Imediato por {bonus.price}
-                                      </Link>
-                                    </Button>
-                                    <p className="text-xs text-center text-gray-500 mt-2">Pagamento único. Acesso vitalício.</p>
-                                </>
-                            )}
-                        </div>
-                    </div>
-
-                    <div className="relative min-h-[300px] md:min-h-0">
-                        <Image
-                            src={bonus.imageUrl}
-                            alt={bonus.title}
-                            fill
-                            className="object-cover"
-                            data-ai-hint={bonus.imageHint}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent md:bg-gradient-to-r md:from-card md:via-card/50 md:to-transparent"></div>
+                                )}
+                            </>
+                        ) : (
+                            <>
+                                <div className="mb-6">
+                                    <label htmlFor={`coupon-${bonus.id}`} className="text-xs font-bold text-gray-400 uppercase tracking-wider">Tem um cupom?</label>
+                                    <div className="flex items-center gap-2 mt-2">
+                                        <Input
+                                            id={`coupon-${bonus.id}`}
+                                            placeholder="Seu código aqui"
+                                            className="bg-primary/50 border-border"
+                                            value={couponCode}
+                                            onChange={(e) => setCouponCode(e.target.value)}
+                                        />
+                                        <Button variant="secondary" className="flex-shrink-0" onClick={handleApplyCoupon}>Aplicar</Button>
+                                    </div>
+                                    {error && <p className="text-red-500 text-xs mt-2">{error}</p>}
+                                </div>
+                                
+                                <Button size="lg" className="w-full bg-accent hover:bg-accent/80 text-lg font-bold h-12 transition-transform duration-200 hover:scale-105">
+                                  <Link href={bonus.checkoutUrl} className="flex items-center">
+                                    <Sparkles className="mr-3 h-5 w-5" />
+                                    Acesso Imediato por {bonus.price}
+                                  </Link>
+                                </Button>
+                                <p className="text-xs text-center text-gray-500 mt-2">Pagamento único. Acesso vitalício.</p>
+                            </>
+                        )}
                     </div>
                 </div>
             </Card>
@@ -315,9 +328,9 @@ const BonusCard = ({ bonus }: { bonus: Bonus }) => {
 
 export default function BonusPage() {
   return (
-    <div className="relative min-h-screen w-full text-white overflow-x-hidden">
+    <div className="relative min-h-screen w-full text-white bg-background">
       {/* Header */}
-      <header className="z-20 fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-md">
+      <header className="z-20 sticky top-0 bg-background/80 backdrop-blur-md border-b border-border/50">
         <nav className="container mx-auto flex items-center justify-between p-4">
             <Link href="/paginademembros" className="text-2xl font-bold tracking-tighter">Criat.Dark</Link>
             <Button variant="ghost" asChild>
@@ -328,27 +341,29 @@ export default function BonusPage() {
         </nav>
       </header>
 
-      <main className="container mx-auto flex flex-col items-center px-4 pt-36 sm:pt-48">
+      <main className="container mx-auto px-4 py-12">
         {/* Hero Section */}
-        <section className="z-10 text-center w-full max-w-4xl">
+        <section className="z-10 text-center w-full max-w-4xl mx-auto mb-16">
             <div className="inline-block rounded-full bg-accent/10 px-4 py-2 border border-accent/30 mb-6">
                 <p className="flex items-center text-accent font-semibold">
                     <Gift className="mr-2 h-5 w-5"/> Bônus Exclusivos Desbloqueados
                 </p>
             </div>
-            <h1 className="text-5xl font-extrabold tracking-tighter text-white sm:text-7xl">
+            <h1 className="text-5xl font-extrabold tracking-tighter text-white sm:text-6xl">
                 Sua Jornada Acabou de Ficar Melhor
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
                 Como membro, você tem acesso a ferramentas e conteúdos premium para acelerar ainda mais seus resultados. Explore os bônus abaixo.
             </p>
         </section>
 
         {/* Bonus Card Section */}
-        <section className="z-10 mt-24 w-full max-w-4xl space-y-16">
-            {bonuses.map(bonus => (
-                <BonusCard key={bonus.id} bonus={bonus} />
-            ))}
+        <section className="z-10 w-full max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {bonuses.map(bonus => (
+                  <BonusCard key={bonus.id} bonus={bonus} />
+              ))}
+            </div>
         </section>
       </main>
 
@@ -361,5 +376,3 @@ export default function BonusPage() {
     </div>
   );
 }
-
-    
