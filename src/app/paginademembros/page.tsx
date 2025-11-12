@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { modules } from '@/lib/content';
 import { cn } from '@/lib/utils';
-import { PlayCircle, Search, Settings, Download, Gift, ArrowRight, ExternalLink, X, AlertTriangle } from 'lucide-react';
+import { PlayCircle, Search, Settings, Download, Gift, ArrowRight, ExternalLink, X, AlertTriangle, Key, ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -40,6 +40,7 @@ export default function MembersPage() {
   const [isMovieLinkDialogOpen, setIsMovieLinkDialogOpen] = useState(false);
   const [isPabloMarcalDialogOpen, setIsPabloMarcalDialogOpen] = useState(false);
   const [isMaintenanceDialogOpen, setIsMaintenanceDialogOpen] = useState(false);
+  const [isCapcutDialogOpen, setIsCapcutDialogOpen] = useState(false);
 
   const videoBanks = [
     {
@@ -234,6 +235,38 @@ export default function MembersPage() {
               </div>
           </section>
 
+          <section className="mb-20">
+              <h2 className="text-2xl font-bold tracking-tighter mb-2">FERRAMENTAS EXCLUSIVAS</h2>
+              <p className="text-gray-400 mb-8">Acesso a ferramentas premium com desconto especial para membros.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                  <div onClick={() => setIsCapcutDialogOpen(true)} className="cursor-pointer">
+                      <div className="group relative rounded-xl overflow-hidden border border-amber-400/30 shadow-lg h-full shadow-amber-500/10">
+                          <Image 
+                              src="https://i.postimg.cc/HLY6qnMx/Copia_de_Elementos_para_Design_1.png"
+                              alt="Capcut Pro Vitalício"
+                              width={600}
+                              height={400}
+                              className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+                              data-ai-hint="video editing software"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                          <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                              <h3 className="text-xl font-bold text-white mb-1">CapCut Pro Vitalício</h3>
+                              <p className="text-gray-300 text-sm mb-4">O melhor para edição de vídeos, gratuito.</p>
+                              <div className="flex items-baseline gap-2 mb-4">
+                                <p className="text-2xl font-bold text-amber-400">R$19,90</p>
+                                <p className="text-md font-medium text-gray-500 line-through">R$39,90</p>
+                              </div>
+                              <Button className="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold transition-transform duration-200 group-hover:scale-105">
+                                  <ShoppingCart className="mr-2 h-4 w-4" />
+                                  Acessar Oferta
+                              </Button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
           <section>
             <h2 className="text-2xl font-bold tracking-tighter mb-8">Módulos Principais</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -270,6 +303,38 @@ export default function MembersPage() {
           </section>
         </main>
       </div>
+
+      {/* Dialog for CapCut Pro */}
+      <Dialog open={isCapcutDialogOpen} onOpenChange={setIsCapcutDialogOpen}>
+        <DialogContent className="sm:max-w-md bg-card border-amber-400/50 text-white">
+            <DialogHeader>
+                <DialogTitle>CapCut Pro Vitalício</DialogTitle>
+                <DialogDescription>
+                    Acesse o link para adquirir o produto. Use a senha abaixo após a compra.
+                </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-4 py-4">
+                <Button asChild className="w-full justify-start bg-primary hover:bg-primary/80">
+                    <Link href="https://drive.google.com/drive/folders/16B-LixsrbgKQ21rPvHEd6FXQ5ZLe4JmC?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-3 h-4 w-4" />
+                        Link para o Produto
+                    </Link>
+                </Button>
+                 <div className="flex items-center gap-3 rounded-md border border-dashed border-amber-400/50 bg-primary/30 p-3">
+                    <Key className="h-5 w-5 text-amber-400 flex-shrink-0" />
+                    <div>
+                        <p className="text-sm text-gray-300">Senha de Acesso:</p>
+                        <p className="font-mono text-lg font-bold text-amber-400">CORTESCAPCUT</p>
+                    </div>
+                </div>
+            </div>
+            <DialogClose asChild>
+                <Button type="button" variant="secondary" className="w-full">
+                    Fechar
+                </Button>
+            </DialogClose>
+        </DialogContent>
+      </Dialog>
 
       {/* Dialog for Maintenance */}
       <Dialog open={isMaintenanceDialogOpen} onOpenChange={setIsMaintenanceDialogOpen}>
