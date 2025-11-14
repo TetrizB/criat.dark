@@ -539,13 +539,11 @@ export default function HomePage() {
                   SIM! EU QUERO A OFERTA!
                 </Link>
             </Button>
-            <DialogClose asChild>
-              <Button asChild type="button" variant="link" className="text-gray-400">
-                <Link href="https://www.ggcheckout.com/checkout/v2/1xVgHsdtg2YbCp4gxSgn">
-                  Não, obrigado. Quero apenas o Pacote Básico.
-                </Link>
-              </Button>
-            </DialogClose>
+            <Button asChild type="button" variant="link" className="text-gray-400">
+              <Link href="https://www.ggcheckout.com/checkout/v2/1xVgHsdtg2YbCp4gxSgn">
+                Não, obrigado. Quero apenas o Pacote Básico.
+              </Link>
+            </Button>
           </div>
         </DialogContent>
       </Dialog>

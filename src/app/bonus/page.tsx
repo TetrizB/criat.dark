@@ -81,7 +81,7 @@ const bonuses: Bonus[] = [
     id: "resource-library",
     title: "Bíblioteca de Recursos",
     subtitle: "Imagens, Vetores, Vídeos & Mockups",
-    description: "AQUI NÃO TEM MISÉRIA, ISSO AQUI JÁ FACILITA MUITO O CORRE DA GALERA PRINCIPALMENTE INICIANTE!",
+    description: "Uma curadoria de ferramentas e recursos para acelerar seus projetos.",
     imageUrl: "https://i.postimg.cc/FKQWzDrx/VIAGENS-6.png",
     imageHint: "resource library collage",
     price: "R$14,90",
@@ -215,7 +215,9 @@ const BonusCard = ({ bonus }: { bonus: Bonus }) => {
                                                 value={couponCode}
                                                 onChange={(e) => setCouponCode(e.target.value)}
                                             />
-                                            <Button variant="secondary" className="flex-shrink-0" onClick={handleAccess}>Acessar</Button>
+                                            <Button variant="secondary" className="flex-shrink-0" onClick={handleAccess}>
+                                              <ArrowRight className="h-4 w-4" />
+                                            </Button>
                                         </div>
                                         {error && <p className="text-red-500 text-xs mt-2">{error}</p>}
                                         <Button variant="link" size="sm" className="text-gray-500 w-full mt-1" onClick={() => {setShowAccessInput(false); setError(null);}}>
