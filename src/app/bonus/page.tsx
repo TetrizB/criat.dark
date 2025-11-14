@@ -241,8 +241,8 @@ const BonusCard = ({ bonus }: { bonus: Bonus }) => {
                                     {error && <p className="text-red-500 text-xs mt-2">{error}</p>}
                                 </div>
                                 
-                                <Button size="lg" className="w-full bg-accent hover:bg-accent/80 text-lg font-bold h-12 transition-transform duration-200 hover:scale-105">
-                                  <Link href={bonus.checkoutUrl} className="flex items-center">
+                                <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/80 text-lg font-bold h-12 transition-transform duration-200 hover:scale-105">
+                                  <Link href={bonus.checkoutUrl} className="flex items-center justify-center">
                                     <Sparkles className="mr-3 h-5 w-5" />
                                     Acesso Imediato por {bonus.price}
                                   </Link>
