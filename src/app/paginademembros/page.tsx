@@ -123,6 +123,14 @@ export default function MembersPage() {
       hideOverlay: true,
       linkUrl: "https://drive.google.com/drive/folders/11nHOpjzNHFGOUGdpQ8q-Tk1nNydnEBFy",
     },
+     {
+      title: "Cortes Vídeos Satisfatórios",
+      description: "Vídeos satisfatórios para relaxar e engajar.",
+      imageUrl: "https://i.postimg.cc/fyRxY0Hz/11.png",
+      imageHint: "satisfying videos",
+      hideOverlay: true,
+      linkUrl: "https://drive.google.com/drive/u/0/folders/1vY5G2AlTgqRb9jZvSjbjx4eFR3LcvpFT",
+    },
   ];
 
   return (
