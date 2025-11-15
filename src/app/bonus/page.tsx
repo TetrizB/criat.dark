@@ -85,7 +85,7 @@ const bonuses: Bonus[] = [
     imageUrl: "https://i.postimg.cc/FKQWzDrx/VIAGENS-6.png",
     imageHint: "resource library collage",
     price: "R$14,90",
-    checkoutUrl: "#",
+    checkoutUrl: "https://www.ggcheckout.com/checkout/v2/aRVmuvp8pKf4hbmjxxwV",
     correctCoupon: "ABA321",
     accessContent: {
         title: "Biblioteca de Recursos Liberada!",
