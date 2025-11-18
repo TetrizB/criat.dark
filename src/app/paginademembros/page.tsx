@@ -235,10 +235,6 @@ export default function MembersPage() {
                                   className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
                                   data-ai-hint={bank.imageHint}
                               />
-                               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                               <div className="absolute bottom-0 left-0 right-0 p-4">
-                                  <h3 className="text-lg font-bold text-white drop-shadow-md">{bank.title}</h3>
-                               </div>
                           </div>
                       );
 
