@@ -29,6 +29,24 @@
       "description": "Avatar for the third testimonial.",
       "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwZXJzb24lMjBhdmF0YXJ8ZW58MHx8fHwxNzYxMjcwMDg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woman portrait"
+    },
+    {
+      "id": "sora-ai",
+      "description": "Abstract image for Sora AI.",
+      "imageUrl": "https://i.postimg.cc/pT3Y3b3z/14.png",
+      "imageHint": "ai video generation"
+    },
+    {
+      "id": "lovart-ai",
+      "description": "Abstract image for Lovart AI.",
+      "imageUrl": "https://i.postimg.cc/tJn5yLg9/15.png",
+      "imageHint": "ai image creation"
+    },
+    {
+      "id": "agents-ai",
+      "description": "Abstract image for AI agents.",
+      "imageUrl": "https://i.postimg.cc/MH316xXQ/16.png",
+      "imageHint": "ai agents sales"
     }
   ]
 }

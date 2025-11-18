@@ -6,11 +6,20 @@ import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { modules } from '@/lib/content';
 import { cn } from '@/lib/utils';
-import { PlayCircle, Search, Settings, Download, Gift, ArrowRight, ExternalLink, AlertTriangle, Key, ShoppingCart } from 'lucide-react';
+import { PlayCircle, Search, Settings, Download, Gift, ArrowRight, ExternalLink, AlertTriangle, Key, ShoppingCart, Bot, Image as ImageIcon, FileText } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogClose } from '@/components/ui/dialog';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+
+const getPlaceholderImage = (id: string) => {
+  return PlaceHolderImages.find((img) => img.id === id);
+};
+
+const soraAiImage = getPlaceholderImage('sora-ai');
+const lovartAiImage = getPlaceholderImage('lovart-ai');
+const agentsAiImage = getPlaceholderImage('agents-ai');
 
 const driveLinks = [
   "https://drive.google.com/drive/folders/1HhhL8Q77y5ryfI4gztkDUy0GQiZuJBUP",
@@ -202,7 +211,7 @@ export default function MembersPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                   {/* Capcut Pro Card */}
                   <Link href="/bonus" className="block group">
-                      <div className="relative rounded-xl overflow-hidden border border-amber-500/50 shadow-lg h-full bg-card/80 flex flex-col items-center justify-center text-center p-6 hover:border-amber-500 transition-all duration-300">
+                      <div className="relative rounded-xl overflow-hidden border border-amber-500/50 shadow-lg bg-card/80 flex flex-col items-center justify-center text-center p-6 hover:border-amber-500 transition-all duration-300">
                           <div className="mb-4 p-4 bg-primary rounded-full border border-dashed border-amber-500/50">
                             <ShoppingCart className="h-10 w-10 text-amber-400" />
                           </div>
@@ -215,7 +224,7 @@ export default function MembersPage() {
                   </Link>
                   {/* Other Bonuses Card */}
                   <Link href="/bonus" className="block group">
-                      <div className="relative rounded-xl overflow-hidden border border-border/30 shadow-lg h-full bg-card/80 flex flex-col items-center justify-center text-center p-6 hover:border-accent/50 transition-all duration-300">
+                      <div className="relative rounded-xl overflow-hidden border border-border/30 shadow-lg bg-card/80 flex flex-col items-center justify-center text-center p-6 hover:border-accent/50 transition-all duration-300">
                           <div className="mb-4 p-4 bg-primary rounded-full border border-dashed border-accent/50">
                             <Gift className="h-10 w-10 text-accent" />
                           </div>
@@ -228,14 +237,66 @@ export default function MembersPage() {
                   </Link>
               </div>
           </section>
+
+          {/* AI Section */}
+          <section id="ai-tools" className="mb-20">
+              <div className="flex items-center gap-4 mb-8">
+                  <Bot className="h-8 w-8 text-accent flex-shrink-0" />
+                  <div>
+                      <h2 className="text-2xl font-bold tracking-tighter text-white">
+                          Inteligência Artificial
+                      </h2>
+                      <p className="text-gray-400">Ferramentas e guias para potencializar sua criação de conteúdo com IA.</p>
+                  </div>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <Link href="/ia/sora" className="block group">
+                      <div className="relative rounded-xl overflow-hidden border border-border/30 shadow-lg bg-card/80 flex flex-col hover:border-accent/50 transition-all duration-300">
+                          {soraAiImage && <Image src={soraAiImage.imageUrl} alt="Sora AI" width={500} height={281} className="object-cover" data-ai-hint={soraAiImage.imageHint} />}
+                          <div className="p-6">
+                            <h3 className="text-xl font-bold text-white">Sora 2 AI Grátis e Ilimitado</h3>
+                            <p className="text-gray-400 mt-2 mb-4">Aprenda a gerar vídeos incríveis com IA de forma gratuita.</p>
+                            <Button variant="outline" className="mt-auto">
+                                Acessar Guia <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                          </div>
+                      </div>
+                  </Link>
+                  <Link href="/ia/lovart" className="block group">
+                      <div className="relative rounded-xl overflow-hidden border border-border/30 shadow-lg bg-card/80 flex flex-col hover:border-accent/50 transition-all duration-300">
+                          {lovartAiImage && <Image src={lovartAiImage.imageUrl} alt="Lovart AI" width={500} height={281} className="object-cover" data-ai-hint={lovartAiImage.imageHint} />}
+                          <div className="p-6">
+                            <h3 className="text-xl font-bold text-white">I.A. para Criativos em Imagem</h3>
+                            <p className="text-gray-400 mt-2 mb-4">Crie imagens espetaculares para seus projetos com esta ferramenta.</p>
+                            <Button variant="outline" className="mt-auto">
+                                Acessar Ferramenta <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                          </div>
+                      </div>
+                  </Link>
+                  <Link href="/ia/agentes" className="block group">
+                     <div className="relative rounded-xl overflow-hidden border border-border/30 shadow-lg bg-card/80 flex flex-col hover:border-accent/50 transition-all duration-300">
+                          {agentsAiImage && <Image src={agentsAiImage.imageUrl} alt="Agentes de IA" width={500} height={281} className="object-cover" data-ai-hint={agentsAiImage.imageHint} />}
+                          <div className="p-6">
+                            <h3 className="text-xl font-bold text-white">Agentes de IA para Vendas</h3>
+                            <p className="text-gray-400 mt-2 mb-4">Agentes GPTs especializados em criar e otimizar páginas de vendas.</p>
+                             <Button variant="outline" className="mt-auto">
+                                Acessar Agentes <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                          </div>
+                      </div>
+                  </Link>
+              </div>
+          </section>
           
           <section className="mb-20">
               <h2 className="text-2xl font-bold tracking-tighter mb-2">CORTES VIRAIS</h2>
               <p className="text-gray-400 mb-8">Clique em qualquer card para ser redirecionado para a pasta com os vídeos.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-start">
                   {videoBanks.map((bank, index) => {
                       const cardContent = (
-                          <div className="group relative rounded-xl overflow-hidden border border-border/30 shadow-lg">
+                          <div className="group relative rounded-xl overflow-hidden border border-border/30 shadow-lg w-full">
                               <Image 
                                   src={bank.imageUrl}
                                   alt={bank.title}
@@ -275,7 +336,7 @@ export default function MembersPage() {
                 <div
                   key={index}
                   onClick={() => setIsMaintenanceDialogOpen(true)}
-                  className="cursor-pointer group relative rounded-xl border border-border/30 bg-card/50 overflow-hidden shadow-lg hover:shadow-accent/20 transition-shadow duration-300"
+                  className="cursor-pointer group relative rounded-xl border border-border/30 bg-card/50 overflow-hidden shadow-lg hover:shadow-accent/20 transition-shadow duration-300 h-full"
                 >
                   <div className="relative p-6 flex flex-col h-full">
                     <div className="mb-4 p-3 bg-primary rounded-full w-fit">
@@ -405,3 +466,5 @@ export default function MembersPage() {
     </>
   );
 }
+
+    
