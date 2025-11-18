@@ -138,6 +138,22 @@ export default function MembersPage() {
       hideOverlay: true,
       linkUrl: "https://drive.google.com/drive/folders/1-5yT0L4Z2xY8b8Z3qG7j4kL9wX0Yh_Z",
     },
+    {
+      title: "Cortes Flow Podcast",
+      description: "Cortes do Flow Podcast.",
+      imageUrl: "https://i.postimg.cc/wTTPs8x8/12.png",
+      imageHint: "podcast studio",
+      hideOverlay: true,
+      linkUrl: "https://drive.google.com/drive/folders/1A7Xdtt12mkXKDJWGX-yPYXPJQb92OpHL",
+    },
+    {
+      title: "Cortes Podpah",
+      description: "Cortes do Podpah.",
+      imageUrl: "https://i.postimg.cc/tCCfVQRb/13.png",
+      imageHint: "podcast interview",
+      hideOverlay: true,
+      linkUrl: "https://drive.google.com/drive/folders/1Hjf3WKHkh68cfgR6fKU-I6frgiDY6_f0",
+    }
   ];
 
   return (
