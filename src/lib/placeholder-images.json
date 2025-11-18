@@ -33,19 +33,19 @@
     {
       "id": "sora-ai",
       "description": "Abstract image for Sora AI.",
-      "imageUrl": "https://i.postimg.cc/pT3Y3b3z/14.png",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg9ZQunIII9zKeO3yXiq7K_Kisu3c1uaaT6Q&",
       "imageHint": "ai video generation"
     },
     {
       "id": "lovart-ai",
       "description": "Abstract image for Lovart AI.",
-      "imageUrl": "https://i.postimg.cc/tJn5yLg9/15.png",
+      "imageUrl": "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/e52acf39-1be8-416b-b210-d62e9e635e1a/b3f0f917376f47a9879bfa1e4778e3420db818f31353ee20a690c75806c4f852.png?t=1759437376",
       "imageHint": "ai image creation"
     },
     {
       "id": "agents-ai",
       "description": "Abstract image for AI agents.",
-      "imageUrl": "https://i.postimg.cc/MH316xXQ/16.png",
+      "imageUrl": "https://www.semcodar.com.br/wp-content/uploads/2025/04/tres-agentes-de-ia-525.webp",
       "imageHint": "ai agents sales"
     }
   ]
