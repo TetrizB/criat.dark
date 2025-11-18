@@ -52,6 +52,24 @@ const nextConfig: NextConfig = {
         hostname: 'mulknishdhiyvgfpdmjq.supabase.co',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'encrypted-tbn0.gstatic.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.beehiiv.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.semcodar.com.br',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
