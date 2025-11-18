@@ -20,10 +20,10 @@ import {
 import React from 'react';
 import { ResultsCarousel } from '@/components/ui/results-carousel';
 import { VideoCarousel } from '@/components/ui/video-carousel';
-import { Dialog, DialogContent, DialogHeader, DialogDescription } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { DialogClose } from '@radix-ui/react-dialog';
 import VslPlayer from '@/components/ui/vsl-player';
-import VslScript from '@/components/ui/vsl-script';
+
 
 const getPlaceholderImage = (id: string) => {
   return PlaceHolderImages.find((img) => img.id === id);
@@ -187,8 +187,7 @@ export default function HomePage() {
                   Descubra o método usado por perfis anônimos para construir uma audiência e monetizar sem precisar aparecer.
               </p>
               <div className="mt-10 flex flex-col items-center gap-8">
-                  <VslPlayer />
-                  <VslScript />
+                <VslPlayer />
                   <div className="w-full max-w-sm">
                     <GradientCard>
                       <div className="p-4 flex items-center gap-4">
@@ -262,12 +261,12 @@ export default function HomePage() {
             <VideoCarousel />
             <p className="text-center text-gray-300 mt-4 text-lg">edite eles em seus videos ou utilize-os como estão</p>
             <div className="mt-8 text-center">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/80 text-lg font-bold h-14 transition-transform duration-200 hover:scale-105 px-8">
-                  <Link href="#ofertas">
-                      <ShoppingCart className="mr-3" />
-                      Quero ter acesso agora
-                  </Link>
-              </Button>
+                <Button asChild size="lg" className="bg-accent hover:bg-accent/80 text-lg font-bold h-14 transition-transform duration-200 hover:scale-105 px-8">
+                    <Link href="#ofertas">
+                        <ShoppingCart className="mr-3 h-5 w-5" />
+                        Quero ter acesso agora
+                    </Link>
+                </Button>
             </div>
           </section>
 

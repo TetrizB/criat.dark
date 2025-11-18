@@ -60,14 +60,6 @@ export default function RootLayout({
           a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
           document.head.appendChild(a);
         `}} />
-        <script id="converteai-preload-1" dangerouslySetInnerHTML={{ __html: `!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);` }} />
-        <link rel="preload" href="https://scripts.converteai.net/1d6c7e9a-980e-4cd9-add6-571246eddeec/players/690d6cc852aad814cc4b8e94/v4/player.js" as="script" />
-        <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script" />
-        <link rel="preload" href="https://cdn.converteai.net/1d6c7e9a-980e-4cd9-add6-571246eddeec/690d6cc550f24252ef419513/main.m3u8" as="fetch" />
-        <link rel="dns-prefetch" href="https://cdn.converteai.net" />
-        <link rel="dns-prefetch" href="https://scripts.converteai.net" />
-        <link rel="dns-prefetch" href="https://images.converteai.net" />
-        <link rel="dns-prefetch" href="https://api.vturb.com.br" />
         
         <ShaderBackground />
         {children}
