@@ -243,11 +243,10 @@ export default function MembersPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {videoBanks.map((bank, index) => {
                       const cardContent = (
-                          <div className="group relative rounded-xl overflow-hidden border border-border/30 shadow-lg h-full">
+                          <div className="group relative rounded-xl overflow-hidden border border-border/30 shadow-lg">
                               <Image 
                                   src={bank.imageUrl}
                                   alt={bank.title}
-                                  layout="responsive"
                                   width={500}
                                   height={888}
                                   className="object-cover w-full h-auto transform group-hover:scale-110 transition-transform duration-500"
@@ -266,7 +265,7 @@ export default function MembersPage() {
                       
                       if (bank.linkUrl) {
                           return (
-                              <Link key={index} href={bank.linkUrl} target="_blank" rel="noopener noreferrer" className="block h-full">
+                              <Link key={index} href={bank.linkUrl} target="_blank" rel="noopener noreferrer" className="block">
                                   {cardContent}
                               </Link>
                           );
@@ -414,5 +413,3 @@ export default function MembersPage() {
     </>
   );
 }
-
-    
