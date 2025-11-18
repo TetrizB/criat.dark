@@ -130,14 +130,6 @@ export default function MembersPage() {
       hideOverlay: true,
       linkUrl: "https://drive.google.com/drive/u/0/folders/1vY5G2AlTgqRb9jZvSjbjx4eFR3LcvpFT",
     },
-     {
-      title: "Vídeos Motivacionais",
-      description: "Conteúdo inspirador para motivar sua audiência.",
-      imageUrl: "https://i.postimg.cc/pL4DBxYw/motivational-videos.png",
-      imageHint: "motivational speaker",
-      hideOverlay: true,
-      linkUrl: "https://drive.google.com/drive/folders/1-5yT0L4Z2xY8b8Z3qG7j4kL9wX0Yh_Z",
-    },
     {
       title: "Cortes Flow Podcast",
       description: "Cortes do Flow Podcast.",
