@@ -20,7 +20,7 @@ import {
 import React from 'react';
 import { ResultsCarousel } from '@/components/ui/results-carousel';
 import { VideoCarousel } from '@/components/ui/video-carousel';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogDescription } from '@/components/ui/dialog';
 import { DialogClose } from '@radix-ui/react-dialog';
 import VslPlayer from '@/components/ui/vsl-player';
 import VslScript from '@/components/ui/vsl-script';
@@ -486,6 +486,26 @@ export default function HomePage() {
                       <span>Pagamento seguro, acesso imediato e 7 dias de garantia.</span>
                   </div>
               </div>
+          </section>
+
+          {/* Depoimento em Vídeo */}
+          <section className="z-10 mt-32 w-full max-w-4xl">
+            <h2 className="text-center text-4xl sm:text-5xl font-bold tracking-tighter">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">Veja o que o Método Fez por Mim</span>
+            </h2>
+            <p className="text-center text-gray-300 mt-4 text-lg">Uma história real de transformação, no anonimato.</p>
+            <div className="mt-12 rounded-xl overflow-hidden border border-border/50 shadow-2xl shadow-accent/20">
+              <div className="aspect-w-16 aspect-h-9 bg-black">
+                <iframe 
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/BZJpnOUql0o" 
+                  title="YouTube video player" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen>
+                </iframe>
+              </div>
+            </div>
           </section>
 
           {/* FAQ Section */}

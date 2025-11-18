@@ -71,6 +71,9 @@ export default {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      aspectRatio: {
+        '16/9': '16 / 9',
+      },
       keyframes: {
         'accordion-down': {
           from: {
@@ -120,5 +123,8 @@ export default {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 } satisfies Config;
