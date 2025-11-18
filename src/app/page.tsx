@@ -186,7 +186,7 @@ export default function HomePage() {
                   Descubra o método usado por perfis anônimos para construir uma audiência e monetizar sem precisar aparecer.
               </p>
               <div className="mt-10 flex flex-col items-center gap-8">
-                <div style={{position: 'relative', paddingTop: '177.77%', width: '100%', maxWidth: '400px', margin: '0 auto'}}>
+                <div style={{position: 'relative', paddingTop: '125%', width: '100%', maxWidth: '400px', margin: '0 auto'}}>
                     <iframe
                         src="https://player-vz-5f1b2962-e2c.tv.pandavideo.com.br/embed/?v=acafbd77-0f62-449f-b1cc-cc9497498103"
                         style={{border: 'none', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
