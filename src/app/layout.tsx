@@ -23,6 +23,16 @@ export default function RootLayout({
     <html lang="en" className={cn("dark", inter.variable)}>
       <Head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="preload" href="https://player-vz-5f1b2962-e2c.tv.pandavideo.com.br/embed/css/styles.css" as="style" />
+        <link rel="prerender" href="https://player-vz-5f1b2962-e2c.tv.pandavideo.com.br/embed/?v=acafbd77-0f62-449f-b1cc-cc9497498103" />
+        <link rel="preload" href="https://player-vz-5f1b2962-e2c.tv.pandavideo.com.br/embed/js/hls.js" as="script" />
+        <link rel="preload" href="https://player-vz-5f1b2962-e2c.tv.pandavideo.com.br/embed/js/plyr.polyfilled.min.js" as="script" />
+        <link rel="preload" href="https://config.tv.pandavideo.com.br/vz-5f1b2962-e2c/acafbd77-0f62-449f-b1cc-cc9497498103.json" as="fetch" />
+        <link rel="preload" href="https://config.tv.pandavideo.com.br/vz-5f1b2962-e2c/config.json" as="fetch" />
+        <link rel="preload" href="https://b-vz-5f1b2962-e2c.tv.pandavideo.com.br/acafbd77-0f62-449f-b1cc-cc9497498103/playlist.m3u8" as="fetch" />
+        <link rel="dns-prefetch" href="https://b-vz-5f1b2962-e2c.tv.pandavideo.com.br" />
+        <link rel="dns-prefetch" href="https://player-vz-5f1b2962-e2c.tv.pandavideo.com.br" />
+        <link rel="dns-prefetch" href="https://vz-5f1b2962-e2c.b-cdn.net" />
       </Head>
       <body className="font-body antialiased">
         {/* Meta Pixel Code */}
