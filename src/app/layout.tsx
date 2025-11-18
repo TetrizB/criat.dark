@@ -12,9 +12,6 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 export const metadata: Metadata = {
   title: 'Criat.Dark - Seu negócio anônimo no Instagram',
   description: 'Descubra o método para construir uma audiência e monetizar no Instagram sem precisar aparecer.',
-  icons: {
-    icon: '/favicon.ico',
-  },
 };
 
 export default function RootLayout({
@@ -24,6 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn("dark", inter.variable)}>
+      <Head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </Head>
       <body className="font-body antialiased">
         {/* Meta Pixel Code */}
         <script id="fb-pixel-script" dangerouslySetInnerHTML={{ __html: `
