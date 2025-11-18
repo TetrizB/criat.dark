@@ -4,7 +4,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { Gift, Sparkles, ArrowRight, CheckCircle, ExternalLink, ShoppingCart } from 'lucide-react';
+import { Gift, Sparkles, ArrowRight, CheckCircle, ExternalLink, ShoppingCart, Key } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -80,8 +80,8 @@ const bonuses: Bonus[] = [
   {
     id: "resource-library",
     title: "Bíblioteca de Recursos",
-    subtitle: "Imagens, Vetores, Vídeos & Mockups",
-    description: "Uma curadoria de ferramentas e recursos para acelerar seus projetos.",
+    subtitle: "Ferramentas & Recursos para Criativos",
+    description: "Uma curadoria de ferramentas e recursos essenciais para acelerar seus projetos de design e conteúdo.",
     imageUrl: "https://i.postimg.cc/FKQWzDrx/VIAGENS-6.png",
     imageHint: "resource library collage",
     price: "R$14,90",
@@ -201,16 +201,16 @@ const BonusCard = ({ bonus }: { bonus: Bonus }) => {
                                         </Button>
                                         <p className="text-xs text-center text-gray-500 mt-2">Pagamento único. Acesso vitalício.</p>
                                         <Button variant="link" className="text-gray-400 w-full mt-1" onClick={() => setShowAccessInput(true)}>
-                                            Já adquiriu? Acesse aqui.
+                                             <Key className="mr-2 h-4 w-4" /> Já adquiriu? Acesse aqui.
                                         </Button>
                                     </>
                                 ) : (
                                     <div>
-                                        <label htmlFor={`access-coupon-${bonus.id}`} className="text-xs font-bold text-gray-400 uppercase tracking-wider">Insira a senha para acessar</label>
+                                        <label htmlFor={`access-coupon-${bonus.id}`} className="text-xs font-bold text-gray-400 uppercase tracking-wider">Insira a senha de acesso</label>
                                         <div className="flex items-center gap-2 mt-2">
                                             <Input
                                                 id={`access-coupon-${bonus.id}`}
-                                                placeholder="Sua senha de acesso"
+                                                placeholder="Sua senha"
                                                 className="bg-primary/50 border-border"
                                                 value={couponCode}
                                                 onChange={(e) => setCouponCode(e.target.value)}
@@ -245,7 +245,7 @@ const BonusCard = ({ bonus }: { bonus: Bonus }) => {
                                 
                                 <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/80 text-lg font-bold h-12 transition-transform duration-200 hover:scale-105">
                                   <Link href={bonus.checkoutUrl} className="flex items-center justify-center">
-                                    <Sparkles className="mr-3 h-5 w-5" />
+                                    <ShoppingCart className="mr-3 h-5 w-5" />
                                     Acesso Imediato por {bonus.price}
                                   </Link>
                                 </Button>

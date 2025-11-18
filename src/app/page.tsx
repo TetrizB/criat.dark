@@ -413,7 +413,7 @@ export default function HomePage() {
                           <CardTitle>"Não tenho dinheiro para investir agora."</CardTitle>
                       </CardHeader>
                       <CardContent>
-                          <p className="text-gray-300 leading-relaxed">Por isso criei a oferta de R$19,97. É menos que um lanche. O objetivo é que você recupere esse investimento em menos de 24 horas após aplicar o pilar 3.</p>
+                          <p className="text-gray-300 leading-relaxed">Entendo perfeitamente. Por isso, criei a oferta de R$19,97. É menos que um lanche. O objetivo é que você recupere esse valor em poucas horas com as estratégias do pilar 3.</p>
                       </CardContent>
                   </GradientCard>
                   <GradientCard color="accent">
@@ -421,7 +421,7 @@ export default function HomePage() {
                           <CardTitle>"Não tenho tempo para criar conteúdo."</CardTitle>
                       </CardHeader>
                       <CardContent>
-                          <p className="text-gray-300 leading-relaxed">O Pilar 2, "Sistema de Reciclagem Inteligente", foi feito para você. Com nosso pack de +60 mil vídeos, você não cria nada do zero, apenas adapta e posta em minutos.</p>
+                          <p className="text-gray-300 leading-relaxed">O pack com +60 mil vídeos virais foi feito para você. Com nosso sistema de reciclagem, você não cria nada do zero, apenas adapta e posta em minutos por dia.</p>
                       </CardContent>
                   </GradientCard>
               </div>
@@ -437,6 +437,9 @@ export default function HomePage() {
                           {testimonial1Avatar && <Image src={testimonial1Avatar.imageUrl} alt="Avatar de aluno" width={80} height={80} className="rounded-full mx-auto mb-4 border-2 border-accent/50" data-ai-hint={testimonial1Avatar.imageHint} />}
                           <p className="font-bold text-lg">Mariana S.</p>
                           <p className="text-sm text-gray-400 mb-4">De CLT a empreendedora</p>
+                          <div className="flex justify-center items-center gap-1 mt-2 mb-2 text-yellow-400">
+                              <Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" />
+                          </div>
                           <p className="italic text-gray-300">"Em 3 semanas, fiz meu primeiro saque de R$7.890. Nunca imaginei que seria possível sem aparecer."</p>
                           <p className="mt-4 text-3xl font-bold text-green-400">+ R$7.890,00</p>
                       </CardContent>
@@ -446,6 +449,9 @@ export default function HomePage() {
                           {testimonial2Avatar && <Image src={testimonial2Avatar.imageUrl} alt="Avatar de aluno" width={80} height={80} className="rounded-full mx-auto mb-4 border-2 border-accent/50" data-ai-hint={testimonial2Avatar.imageHint} />}
                           <p className="font-bold text-lg">Lucas P.</p>
                           <p className="text-sm text-gray-400 mb-4">Introvertido e agora livre</p>
+                           <div className="flex justify-center items-center gap-1 mt-2 mb-2 text-yellow-400">
+                              <Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" />
+                          </div>
                           <p className="italic text-gray-300">"Odeio exposição. O método foi a única coisa que funcionou para mim. Já são R$12.300 em 45 dias."</p>
                           <p className="mt-4 text-3xl font-bold text-green-400">+ R$12.300,00</p>
                       </CardContent>
@@ -454,7 +460,11 @@ export default function HomePage() {
                       <CardContent className="pt-8 text-center">
                           {testimonial3Avatar && <Image src={testimonial3Avatar.imageUrl} alt="Avatar de aluno" width={80} height={80} className="rounded-full mx-auto mb-4 border-2 border-accent/50" data-ai-hint={testimonial3Avatar.imageHint} />}
                           <p className="font-bold text-lg">Fernanda L.</p>
-                          <p className="text-sm text-gray-400 mb-4">Renda extra que virou principal</p>                          <p className="italic text-gray-300">"Comecei para ter uma renda extra, hoje já ganho mais do que no meu antigo emprego. Fechei o mês com R$22.500."</p>
+                          <p className="text-sm text-gray-400 mb-4">Renda extra que virou principal</p>
+                           <div className="flex justify-center items-center gap-1 mt-2 mb-2 text-yellow-400">
+                              <Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" />
+                          </div>
+                          <p className="italic text-gray-300">"Comecei para ter uma renda extra, hoje já ganho mais do que no meu antigo emprego. Fechei o mês com R$22.500."</p>
                           <p className="mt-4 text-3xl font-bold text-green-400">+ R$22.500,00</p>
                       </CardContent>
                   </GradientCard>

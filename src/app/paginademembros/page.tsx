@@ -40,7 +40,6 @@ export default function MembersPage() {
   const [isMovieLinkDialogOpen, setIsMovieLinkDialogOpen] = useState(false);
   const [isPabloMarcalDialogOpen, setIsPabloMarcalDialogOpen] = useState(false);
   const [isMaintenanceDialogOpen, setIsMaintenanceDialogOpen] = useState(false);
-  const [isCapcutDialogOpen, setIsCapcutDialogOpen] = useState(false);
 
   const videoBanks = [
     {
@@ -124,12 +123,20 @@ export default function MembersPage() {
       linkUrl: "https://drive.google.com/drive/folders/11nHOpjzNHFGOUGdpQ8q-Tk1nNydnEBFy",
     },
      {
-      title: "Cortes Vídeos Satisfatórios",
-      description: "Vídeos satisfatórios para relaxar e engajar.",
+      title: "Vídeos Satisfatórios",
+      description: "Vídeos relaxantes para aumentar o engajamento.",
       imageUrl: "https://i.postimg.cc/fyRxY0Hz/11.png",
       imageHint: "satisfying videos",
       hideOverlay: true,
       linkUrl: "https://drive.google.com/drive/u/0/folders/1vY5G2AlTgqRb9jZvSjbjx4eFR3LcvpFT",
+    },
+     {
+      title: "Vídeos Motivacionais",
+      description: "Conteúdo inspirador para motivar sua audiência.",
+      imageUrl: "https://i.postimg.cc/pL4DBxYw/motivational-videos.png",
+      imageHint: "motivational speaker",
+      hideOverlay: true,
+      linkUrl: "https://drive.google.com/drive/folders/1-5yT0L4Z2xY8b8Z3qG7j4kL9wX0Yh_Z",
     },
   ];
 
@@ -185,16 +192,29 @@ export default function MembersPage() {
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {/* Capcut Pro Card */}
+                  <Link href="/bonus" className="block group">
+                      <div className="relative rounded-xl overflow-hidden border border-amber-500/50 shadow-lg h-full bg-card/80 flex flex-col items-center justify-center text-center p-6 hover:border-amber-500 transition-all duration-300">
+                          <div className="mb-4 p-4 bg-primary rounded-full border border-dashed border-amber-500/50">
+                            <ShoppingCart className="h-10 w-10 text-amber-400" />
+                          </div>
+                          <h3 className="text-xl font-bold text-amber-400">CapCut Pro Vitalício</h3>
+                          <p className="text-gray-400 mt-2 mb-4">Oferta especial para ter acesso vitalício à melhor ferramenta de edição de vídeos.</p>
+                          <Button variant="outline" className="mt-auto border-amber-500 text-amber-400 hover:bg-amber-500 hover:text-black">
+                              Acessar Oferta <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                      </div>
+                  </Link>
                   {/* Other Bonuses Card */}
                   <Link href="/bonus" className="block group">
                       <div className="relative rounded-xl overflow-hidden border border-border/30 shadow-lg h-full bg-card/80 flex flex-col items-center justify-center text-center p-6 hover:border-accent/50 transition-all duration-300">
                           <div className="mb-4 p-4 bg-primary rounded-full border border-dashed border-accent/50">
                             <Gift className="h-10 w-10 text-accent" />
                           </div>
-                          <h3 className="text-xl font-bold text-white">Ofertas e Ferramentas</h3>
-                          <p className="text-gray-400 mt-2 mb-4">Acesse o Capcut Pro, pack de design, biblioteca de recursos e muito mais.</p>
+                          <h3 className="text-xl font-bold text-white">Mais Ferramentas</h3>
+                          <p className="text-gray-400 mt-2 mb-4">Acesse o pack de design, biblioteca de recursos e muito mais para acelerar seus projetos.</p>
                           <Button variant="outline" className="mt-auto">
-                              Ver Todas as Ofertas <ArrowRight className="ml-2 h-4 w-4" />
+                              Ver Ofertas <ArrowRight className="ml-2 h-4 w-4" />
                           </Button>
                       </div>
                   </Link>
@@ -204,31 +224,21 @@ export default function MembersPage() {
           <section className="mb-20">
               <h2 className="text-2xl font-bold tracking-tighter mb-2">CORTES VIRAIS</h2>
               <p className="text-gray-400 mb-8">Clique em qualquer card para ser redirecionado para a pasta com os vídeos.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {videoBanks.map((bank, index) => {
                       const cardContent = (
-                          <div className="group relative rounded-xl overflow-hidden border border-border/30 shadow-lg h-full">
+                          <div className="group relative rounded-xl overflow-hidden border border-border/30 shadow-lg h-full aspect-[9/16]">
                               <Image 
                                   src={bank.imageUrl}
                                   alt={bank.title}
-                                  width={600}
-                                  height={400}
+                                  fill
                                   className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
                                   data-ai-hint={bank.imageHint}
                               />
-                              {bank.hideOverlay ? null : (
-                                <>
-                                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                                  <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                                      <h3 className="text-xl font-bold text-white mb-1">{bank.title}</h3>
-                                      <p className="text-gray-300 text-sm mb-4">{bank.description}</p>
-                                      <Button className="w-full bg-accent hover:bg-accent/80 transition-transform duration-200 group-hover:scale-105">
-                                          <Download className="mr-2 h-4 w-4" />
-                                          Baixar Pacote
-                                      </Button>
-                                  </div>
-                                </>
-                              )}
+                               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                               <div className="absolute bottom-0 left-0 right-0 p-4">
+                                  <h3 className="text-lg font-bold text-white drop-shadow-md">{bank.title}</h3>
+                               </div>
                           </div>
                       );
 
